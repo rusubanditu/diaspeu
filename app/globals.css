@@ -1,0 +1,347 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 25 20% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 25 20% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 25 20% 15%;
+    --primary: 25 85% 45%;
+    --primary-foreground: 30 15% 95%;
+    --secondary: 35 25% 92%;
+    --secondary-foreground: 25 20% 20%;
+    --muted: 35 15% 95%;
+    --muted-foreground: 25 10% 45%;
+    --accent: 30 60% 85%;
+    --accent-foreground: 25 20% 20%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 60 9.1% 97.8%;
+    --border: 30 20% 88%;
+    --input: 30 20% 88%;
+    --ring: 25 85% 45%;
+    --radius: 0.75rem;
+
+    /* Custom warm colors */
+    --warm-terracotta: 25 85% 45%;
+    --warm-amber: 35 90% 55%;
+    --warm-cream: 40 30% 95%;
+    --warm-brown: 25 40% 35%;
+    --warm-ochre: 30 70% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border transition-colors duration-300;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Romanian traditional patterns */
+.traditional-pattern {
+  background-image: radial-gradient(circle at 20% 20%, rgba(180, 83, 9, 0.3) 2px, transparent 2px),
+    radial-gradient(circle at 80% 80%, rgba(180, 83, 9, 0.3) 2px, transparent 2px),
+    radial-gradient(circle at 40% 60%, rgba(217, 119, 6, 0.2) 1px, transparent 1px);
+  background-size: 60px 60px, 60px 60px, 30px 30px;
+  background-position: 0 0, 30px 30px, 15px 15px;
+  animation: patternFloat 20s ease-in-out infinite;
+}
+
+@keyframes patternFloat {
+  0%,
+  100% {
+    background-position: 0 0, 30px 30px, 15px 15px;
+  }
+  50% {
+    background-position: 10px 10px, 40px 40px, 25px 25px;
+  }
+}
+
+.warm-gradient {
+  background: linear-gradient(135deg, #fef7ed 0%, #fed7aa 25%, #fdba74 50%, #fb923c 75%, #f97316 100%);
+  animation: gradientShift 8s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.warm-gradient-subtle {
+  background: linear-gradient(135deg, #fefcf9 0%, #fef3e2 50%, #fde8cc 100%);
+}
+
+/* Romanian folk motifs */
+.folk-border {
+  border-image: repeating-linear-gradient(90deg, #ea580c 0px, #ea580c 10px, #fed7aa 10px, #fed7aa 20px) 4;
+}
+
+/* Micro-animations */
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.5s ease-out;
+}
+
+.animate-bounce-gentle {
+  animation: bounceGentle 2s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounceGentle {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Interactive elements */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.button-hover {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.button-hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.button-hover:hover::before {
+  left: 100%;
+}
+
+.button-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation animations */
+.nav-link {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ea580c, #fb923c);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Mobile menu animations */
+.mobile-menu {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-menu.open {
+  animation: slideDown 0.3s ease-out;
+}
+
+.mobile-menu.closed {
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hamburger menu animation */
+.hamburger-line {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+}
+
+.hamburger.open .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.open .hamburger-line:nth-child(2) {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.hamburger.open .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Loading animations */
+.pulse-warm {
+  animation: pulseWarm 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulseWarm {
+  0%,
+  100% {
+    opacity: 1;
+    background-color: rgb(254 215 170);
+  }
+  50% {
+    opacity: 0.8;
+    background-color: rgb(251 146 60);
+  }
+}
+
+/* Text animations */
+.text-shimmer {
+  background: linear-gradient(90deg, #ea580c, #fb923c, #ea580c);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Scroll animations */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Romanian decorative elements */
+.romanian-accent {
+  position: relative;
+}
+
+.romanian-accent::before {
+  content: "❋";
+  position: absolute;
+  top: -10px;
+  left: -20px;
+  color: #ea580c;
+  font-size: 1.5rem;
+  opacity: 0.6;
+}
+
+.romanian-accent::after {
+  content: "❋";
+  position: absolute;
+  bottom: -10px;
+  right: -20px;
+  color: #fb923c;
+  font-size: 1.5rem;
+  opacity: 0.6;
+}
+
+/* Focus styles for accessibility */
+.focus-warm:focus {
+  outline: 2px solid #ea580c;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fef7ed;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ea580c, #fb923c);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #dc2626, #ea580c);
+}
