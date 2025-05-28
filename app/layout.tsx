@@ -1,22 +1,21 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import "./globals.css"
-import { Navigation } from "@/components/navigation"
-import { PrivacyBanner } from "@/components/privacy-banner"
+import type React from "react";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
+import { Navigation } from "@/components/navigation";
+import { PrivacyBanner } from "@/components/privacy-banner";
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "ONG România - Ajutăm Românii din Diaspora",
-  description: "Organizație non-guvernamentală dedicată sprijinirii românilor din diaspora europeană",
-    generator: 'v0.dev'
-}
+  title: "Voluntar in Europa",
+  description: "Suveran Roman",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="ro">
@@ -26,5 +25,5 @@ export default function RootLayout({
         <PrivacyBanner />
       </body>
     </html>
-  )
+  );
 }

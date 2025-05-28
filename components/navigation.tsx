@@ -14,10 +14,10 @@ const menuItems = [
   { href: "/contact", label: "Contact" },
 ];
 
-// Animated Romanian Flag Component with Horizontal Wave Effect
+// Animated Romanian Flag Component with Horizontal Wave Effect and Extended Static Pole
 function AnimatedRomanianFlag() {
   return (
-    <div className="w-16 h-10 relative overflow-hidden">
+    <div className="w-16 h-10 relative overflow-visible">
       <style jsx>{`
         @keyframes flag-wave-horizontal {
           0% {
@@ -136,7 +136,18 @@ function AnimatedRomanianFlag() {
         }
       `}</style>
 
-      <div className="flag-container w-full h-full relative">
+      {/* Extended Static Black Pole - positioned at the left side with extended height downward */}
+      <div
+        className="absolute left-0 top-0 w-1 z-10"
+        style={{
+          height: "60px", // Extended height to make it look like a proper flagpole
+          background:
+            "linear-gradient(to right, #1a1a1a 0%, #333333 50%, #1a1a1a 100%)",
+          boxShadow: "1px 0 2px rgba(0,0,0,0.3)",
+        }}
+      />
+
+      <div className="flag-container w-full h-full relative ml-1">
         {/* Red stripe (right) */}
         <div
           className="flag-stripe absolute top-0 left-2/3 w-1/3 h-full"

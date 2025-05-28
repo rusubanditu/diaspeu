@@ -1,8 +1,12 @@
+"use client";
+
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Heart, Users, Globe, Shield } from "lucide-react";
+import HeroSection from "./Herosec";
 
 const homeArticles = [
   {
@@ -66,9 +70,149 @@ const stats = [
   },
 ];
 
+// Background Music Component for Romanian National Anthem with autoplay
+function BackgroundMusic() {
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [hasUserInteracted, setHasUserInteracted] = useState(false);
+
+  // Initialize audio and handle user interaction for autoplay
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    // Set volume to a comfortable level
+    audio.volume = 1;
+    audio.loop = true;
+
+    // Handle audio events
+    const handleCanPlay = () => {
+      setIsLoaded(true);
+    };
+
+    const handlePlay = () => {
+      setIsPlaying(true);
+    };
+
+    const handlePause = () => {
+      setIsPlaying(false);
+    };
+
+    const handleEnded = () => {
+      setIsPlaying(false);
+    };
+
+    // Handle user interaction for autoplay compliance
+    const handleUserInteraction = () => {
+      if (!hasUserInteracted) {
+        setHasUserInteracted(true);
+        // Try to autoplay after first user interaction
+        if (audio && isLoaded) {
+          audio.play().catch((error) => {
+            console.log("Autoplay failed:", error);
+          });
+        }
+      }
+    };
+
+    // Add event listeners
+    audio.addEventListener("canplay", handleCanPlay);
+    audio.addEventListener("play", handlePlay);
+    audio.addEventListener("pause", handlePause);
+    audio.addEventListener("ended", handleEnded);
+
+    // Listen for any user interaction to enable autoplay
+    document.addEventListener("click", handleUserInteraction, { once: true });
+    document.addEventListener("keydown", handleUserInteraction, { once: true });
+    document.addEventListener("touchstart", handleUserInteraction, {
+      once: true,
+    });
+
+    return () => {
+      audio.removeEventListener("canplay", handleCanPlay);
+      audio.removeEventListener("play", handlePlay);
+      audio.removeEventListener("pause", handlePause);
+      audio.removeEventListener("ended", handleEnded);
+      document.removeEventListener("click", handleUserInteraction);
+      document.removeEventListener("keydown", handleUserInteraction);
+      document.removeEventListener("touchstart", handleUserInteraction);
+    };
+  }, [hasUserInteracted, isLoaded]);
+
+  // Autoplay after user interaction and audio is loaded
+  useEffect(() => {
+    if (hasUserInteracted && isLoaded && !isPlaying) {
+      const audio = audioRef.current;
+      if (audio) {
+        audio.play().catch((error) => {
+          console.log("Autoplay failed:", error);
+        });
+      }
+    }
+  }, [hasUserInteracted, isLoaded]);
+
+  // Toggle play/pause functionality with proper state management
+  const togglePlay = async () => {
+    const audio = audioRef.current;
+    if (!audio || !isLoaded) return;
+
+    try {
+      if (isPlaying) {
+        await audio.pause();
+        setIsPlaying(false);
+      } else {
+        await audio.play();
+        setIsPlaying(true);
+      }
+    } catch (error) {
+      console.log("Audio playback error:", error);
+    }
+  };
+
+  return (
+    <>
+      {/* Hidden audio element with autoplay attribute */}
+      <audio
+        ref={audioRef}
+        src="/imn_romania.mp3"
+        preload="auto"
+        autoPlay
+        muted={false}
+        style={{ display: "none" }}
+      />
+
+      {/* Music control button - responsive design with improved functionality */}
+      {isLoaded && (
+        <div className="fixed bottom-4 right-4 z-50 sm:bottom-6 sm:right-6">
+          <button
+            onClick={togglePlay}
+            className="bg-orange-800/90 text-white p-3 rounded-full hover:bg-orange-700 
+                     transition-all duration-300 shadow-lg backdrop-blur-sm
+                     active:scale-95 focus:outline-none focus:ring-2 focus:ring-orange-400
+                     sm:p-4 group border border-orange-600/50"
+            aria-label={isPlaying ? "Oprește imnul" : "Pornește imnul"}
+            title={
+              isPlaying ? "Oprește imnul României" : "Pornește imnul României"
+            }
+          >
+            <span className="text-lg sm:text-xl group-hover:scale-110 transition-transform duration-200 block">
+              {isPlaying ? "⏸️" : "▶️"}
+            </span>
+          </button>
+        </div>
+      )}
+    </>
+  );
+}
+
 export default function HomePage() {
   return (
     <div className="min-h-screen">
+      {/* Background Music Component - Romanian National Anthem */}
+      <BackgroundMusic />
+      <HeroSection />
+
       {/* Hero Section */}
       <section className="warm-gradient py-20 px-4 relative overflow-hidden">
         <div className="absolute inset-0 traditional-pattern opacity-30"></div>
