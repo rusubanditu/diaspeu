@@ -232,11 +232,11 @@ export function Navigation() {
                 <AnimatedRomanianFlag />
               </div>
               <div className="animate-fade-in">
-                <h1 className="text-2xl font-bold text-orange-700 group-hover:text-orange-600 transition-colors">
-                  Diaspora EU
+                <h1 className="text-2xl font-bold text-orange-700 group-hover:text-orange-600 transition-colors ">
+                  Voluntar in Europa
                 </h1>
-                <p className="text-sm text-orange-600/80">
-                  Impreuna pentru Romania!
+                <p className="text-sm text-orange-600/80 lg:pl-28">
+                  Suveran roman
                 </p>
               </div>
             </Link>
