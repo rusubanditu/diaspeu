@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -70,25 +70,85 @@ const stats = [
   },
 ];
 
-// Background Music Component for Romanian National Anthem with autoplay
+// Enhanced Background Music Component with aggressive autoplay
 function BackgroundMusic() {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [hasUserInteracted, setHasUserInteracted] = useState(false);
+  const [autoplayAttempted, setAutoplayAttempted] = useState(false);
+  const [retryCount, setRetryCount] = useState(0);
 
-  // Initialize audio and handle user interaction for autoplay
+  // Aggressive autoplay function that tries multiple strategies
+  const attemptAutoplay = useCallback(async () => {
+    const audio = audioRef.current;
+    if (!audio || autoplayAttempted) return;
+
+    setAutoplayAttempted(true);
+
+    try {
+      // Strategy 1: Direct play attempt
+      await audio.play();
+      console.log("Autoplay successful - direct play");
+      return;
+    } catch (error) {
+      console.log("Direct autoplay failed, trying alternative methods:", error);
+    }
+
+    // Strategy 2: Reset and try again with muted first
+    try {
+      audio.muted = true;
+      await audio.play();
+      // Gradually unmute
+      setTimeout(() => {
+        if (audio) {
+          audio.muted = false;
+          console.log("Autoplay successful - muted first strategy");
+        }
+      }, 100);
+      return;
+    } catch (error) {
+      console.log("Muted autoplay failed:", error);
+    }
+
+    // Strategy 3: Use setTimeout to delay and retry
+    if (retryCount < 3) {
+      setTimeout(() => {
+        setAutoplayAttempted(false);
+        setRetryCount((prev) => prev + 1);
+      }, 1000);
+    }
+  }, [autoplayAttempted, retryCount]);
+
+  // Initialize audio with optimal settings for autoplay
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
 
-    // Set volume to a comfortable level
-    audio.volume = 1;
+    // Configure audio for maximum autoplay compatibility
+    audio.volume = 0.6;
     audio.loop = true;
+    audio.preload = "auto";
+    audio.crossOrigin = "anonymous";
 
-    // Handle audio events
+    // Audio event handlers
     const handleCanPlay = () => {
       setIsLoaded(true);
+    };
+
+    const handleCanPlayThrough = () => {
+      setIsLoaded(true);
+      // Attempt autoplay as soon as audio can play through
+      if (!autoplayAttempted) {
+        attemptAutoplay();
+      }
+    };
+
+    const handleLoadedData = () => {
+      setIsLoaded(true);
+      // Another trigger point for autoplay
+      if (!autoplayAttempted) {
+        attemptAutoplay();
+      }
     };
 
     const handlePlay = () => {
@@ -103,105 +163,128 @@ function BackgroundMusic() {
       setIsPlaying(false);
     };
 
-    // Handle user interaction for autoplay compliance
-    const handleUserInteraction = () => {
-      if (!hasUserInteracted) {
-        setHasUserInteracted(true);
-        // Try to autoplay after first user interaction
-        if (audio && isLoaded) {
-          audio.play().catch((error) => {
-            console.log("Autoplay failed:", error);
-          });
-        }
-      }
+    const handleError = (e: Event) => {
+      console.error("Audio error:", e);
+      setIsLoaded(false);
     };
 
-    // Add event listeners
+    // Add comprehensive event listeners
     audio.addEventListener("canplay", handleCanPlay);
+    audio.addEventListener("canplaythrough", handleCanPlayThrough);
+    audio.addEventListener("loadeddata", handleLoadedData);
     audio.addEventListener("play", handlePlay);
     audio.addEventListener("pause", handlePause);
     audio.addEventListener("ended", handleEnded);
+    audio.addEventListener("error", handleError);
 
-    // Listen for any user interaction to enable autoplay
-    document.addEventListener("click", handleUserInteraction, { once: true });
-    document.addEventListener("keydown", handleUserInteraction, { once: true });
-    document.addEventListener("touchstart", handleUserInteraction, {
-      once: true,
-    });
+    // Force load the audio
+    audio.load();
 
     return () => {
+      // Cleanup all event listeners
       audio.removeEventListener("canplay", handleCanPlay);
+      audio.removeEventListener("canplaythrough", handleCanPlayThrough);
+      audio.removeEventListener("loadeddata", handleLoadedData);
       audio.removeEventListener("play", handlePlay);
       audio.removeEventListener("pause", handlePause);
       audio.removeEventListener("ended", handleEnded);
-      document.removeEventListener("click", handleUserInteraction);
-      document.removeEventListener("keydown", handleUserInteraction);
-      document.removeEventListener("touchstart", handleUserInteraction);
+      audio.removeEventListener("error", handleError);
     };
-  }, [hasUserInteracted, isLoaded]);
+  }, [attemptAutoplay]);
 
-  // Autoplay after user interaction and audio is loaded
+  // Retry autoplay when loaded state changes
   useEffect(() => {
-    if (hasUserInteracted && isLoaded && !isPlaying) {
-      const audio = audioRef.current;
-      if (audio) {
-        audio.play().catch((error) => {
-          console.log("Autoplay failed:", error);
-        });
-      }
+    if (isLoaded && !isPlaying && !autoplayAttempted) {
+      attemptAutoplay();
     }
-  }, [hasUserInteracted, isLoaded]);
+  }, [isLoaded, isPlaying, autoplayAttempted, attemptAutoplay]);
 
-  // Toggle play/pause functionality with proper state management
-  const togglePlay = async () => {
+  // Additional autoplay attempt on component mount
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (!isPlaying && isLoaded && !autoplayAttempted) {
+        attemptAutoplay();
+      }
+    }, 500);
+
+    return () => clearTimeout(timer);
+  }, [isLoaded, isPlaying, autoplayAttempted, attemptAutoplay]);
+
+  // Toggle play/pause with enhanced functionality
+  const togglePlay = useCallback(async () => {
     const audio = audioRef.current;
     if (!audio || !isLoaded) return;
 
     try {
       if (isPlaying) {
-        await audio.pause();
-        setIsPlaying(false);
+        audio.pause();
       } else {
+        // Ensure audio is unmuted when user manually plays
+        audio.muted = false;
         await audio.play();
-        setIsPlaying(true);
       }
     } catch (error) {
-      console.log("Audio playback error:", error);
+      console.log("Manual playback error:", error);
+      // Try with muted first if manual play fails
+      try {
+        audio.muted = true;
+        await audio.play();
+        setTimeout(() => {
+          if (audio) audio.muted = false;
+        }, 100);
+      } catch (mutedError) {
+        console.log("Muted playback also failed:", mutedError);
+      }
     }
-  };
+  }, [isLoaded, isPlaying]);
 
   return (
     <>
-      {/* Hidden audio element with autoplay attribute */}
+      {/* Audio element with aggressive autoplay settings */}
       <audio
         ref={audioRef}
         src="/imn_romania.mp3"
         preload="auto"
         autoPlay
+        loop
+        playsInline
         muted={false}
         style={{ display: "none" }}
       />
 
-      {/* Music control button - responsive design with improved functionality */}
-      {isLoaded && (
-        <div className="fixed bottom-4 right-4 z-50 sm:bottom-6 sm:right-6">
-          <button
-            onClick={togglePlay}
-            className="bg-orange-800/90 text-white p-3 rounded-full hover:bg-orange-700 
-                     transition-all duration-300 shadow-lg backdrop-blur-sm
-                     active:scale-95 focus:outline-none focus:ring-2 focus:ring-orange-400
-                     sm:p-4 group border border-orange-600/50"
-            aria-label={isPlaying ? "Oprește imnul" : "Pornește imnul"}
-            title={
-              isPlaying ? "Oprește imnul României" : "Pornește imnul României"
-            }
-          >
-            <span className="text-lg sm:text-xl group-hover:scale-110 transition-transform duration-200 block">
-              {isPlaying ? "⏸️" : "▶️"}
-            </span>
-          </button>
-        </div>
-      )}
+      {/* Always visible music control button */}
+      <div className="fixed bottom-4 right-4 z-50 sm:bottom-6 sm:right-6">
+        <button
+          onClick={togglePlay}
+          disabled={!isLoaded}
+          className={`
+            bg-orange-800/90 text-white p-3 rounded-full hover:bg-orange-700 
+            transition-all duration-300 shadow-lg backdrop-blur-sm
+            active:scale-95 focus:outline-none focus:ring-2 focus:ring-orange-400
+            sm:p-4 group border border-orange-600/50
+            ${!isLoaded ? "opacity-50 cursor-not-allowed" : "cursor-pointer"}
+            ${isPlaying ? "animate-pulse" : ""}
+          `}
+          aria-label={
+            !isLoaded
+              ? "Se încarcă muzica..."
+              : isPlaying
+              ? "Oprește imnul"
+              : "Pornește imnul"
+          }
+          title={
+            !isLoaded
+              ? "Se încarcă imnul României..."
+              : isPlaying
+              ? "Oprește imnul României"
+              : "Pornește imnul României"
+          }
+        >
+          <span className="text-lg sm:text-xl group-hover:scale-110 transition-transform duration-200 block">
+            {!isLoaded ? "⏳" : isPlaying ? "⏸️" : "▶️"}
+          </span>
+        </button>
+      </div>
     </>
   );
 }
