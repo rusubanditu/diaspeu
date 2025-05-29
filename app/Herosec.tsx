@@ -103,7 +103,7 @@ export default function HeroSection() {
 
           {/* Optional subtitle for additional context */}
           <p className="text-lg sm:text-xl md:text-2xl text-white/90 mt-8 leading-relaxed max-w-2xl mx-auto">
-            Împreună pentru românii de pretutindeni
+            Împreună pentru românii suverani de pretutindeni
           </p>
         </div>
       </div>

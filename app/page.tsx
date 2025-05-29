@@ -27,7 +27,7 @@ const homeArticles = [
   },
   {
     id: 3,
-    title: "Programe de Integrare Comunitară",
+    title: "Integrare Comunitară",
     description:
       "Facilităm integrarea românilor în comunitățile locale din țările de adopție.",
     image: "/pagina-principala/imagine-copil.png",
@@ -295,6 +295,70 @@ export default function HomePage() {
       {/* Background Music Component - Romanian National Anthem */}
       <BackgroundMusic />
       <HeroSection />
+      {/* Powerful Statement Section */}
+      <section className="py-16 px-4 bg-gradient-to-br from-orange-800 to-orange-900 relative overflow-hidden">
+        {/* Decorative background pattern */}
+        <div className="absolute inset-0 bg-[url('/traditional-pattern.png')] opacity-10"></div>
+
+        {/* Content container */}
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-2xl border border-orange-500/20">
+            {/* Main heading with animation */}
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-orange-100 mb-8 leading-tight text-center animate-fade-in">
+              Un mesaj pentru toți românii
+            </h2>
+
+            {/* Statement paragraphs with staggered animation */}
+            <div className="space-y-6 text-lg md:text-xl text-orange-50/90 leading-relaxed max-w-4xl mx-auto">
+              <p
+                className="animate-slide-up"
+                style={{ animationDelay: "200ms" }}
+              >
+                <span className="text-2xl md:text-3xl font-bold text-orange-300 block mb-4">
+                  Stop! Ajunge!
+                </span>
+                Încetați cu jignirile aduse românilor de pretutindeni. Nu suntem
+                "pleava necalificată" așa cum încercați să ne prezentați.
+              </p>
+
+              <p
+                className="animate-slide-up"
+                style={{ animationDelay: "400ms" }}
+              >
+                Suntem români muncitori și educați, mulți dintre noi cu studii
+                superioare și calificări la standarde mult mai ridicate. Suntem
+                români cu bun simț, crescuți de părinți care ne-au învățat
+                respectul față de ceilalți.
+              </p>
+
+              <p
+                className="animate-slide-up"
+                style={{ animationDelay: "600ms" }}
+              >
+                Nu răspundem cu jigniri, pentru că știm cine suntem și ce
+                valoare avem. Înainte să ne judecați, gândiți-vă că diaspora nu
+                este marginea societății, ci o parte valoroasă și integrantă a
+                ei.
+              </p>
+
+              <p
+                className="text-2xl md:text-3xl font-bold text-orange-300 text-center mt-12 animate-slide-up"
+                style={{ animationDelay: "800ms" }}
+              >
+                Suntem români mândri și demni, oriunde ne-am afla!
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Decorative elements */}
+        <div className="absolute left-4 top-4 text-orange-500/20 text-6xl animate-float">
+          ❋
+        </div>
+        <div className="absolute right-4 bottom-4 text-orange-500/20 text-6xl animate-float-delayed">
+          ❋
+        </div>
+      </section>
 
       {/* Greeting Section - Now first with emotional background */}
       <section className="py-16 px-4 bg-gradient-to-br from-orange-50 to-orange-100 relative overflow-hidden">
@@ -326,8 +390,10 @@ export default function HomePage() {
                 <p>
                   Și mai departe decât atât, vrem să facem ceva și pentru cei
                   de-acasă: pentru bătrânii noștri care, pentru o pâine, vând o
-                  legătură de pătrunjel și sunt alungați din piețe. Pentru micii
-                  antreprenori care abia supraviețuiesc.
+                  legătură de pătrunjel și sunt{" "}
+                  <span className="font-extrabold">amendați</span> și{" "}
+                  <span className="font-extrabold">alungați</span> din piețe.
+                  Pentru micii antreprenori care abia supraviețuiesc.
                 </p>
                 <p className="font-semibold text-orange-800 text-xl sm:text-2xl">
                   Noi nu ne-am pierdut țara din suflet. Poate am pierdut-o din
@@ -507,7 +573,7 @@ export default function HomePage() {
           <div className="relative animate-fade-in">
             <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-[4/3] w-full">
               <Image
-                src="/copii-caise.jpg"
+                src="/la-cirese.jpg"
                 alt="Roșii românești proaspete - produse tradiționale din România"
                 fill
                 className="object-cover transform hover:scale-105 transition-transform duration-300"
@@ -571,7 +637,7 @@ export default function HomePage() {
               <h2 className="text-3xl lg:text-5xl sm:text-4xl font-bold mb-6">
                 Din dragoste pentru ai noștri – România se leagă din nou
               </h2>
-              <p className="text-2xl leading-relaxed mb-8 max-w-3xl">
+              <p className="text-lg lg:text-2xl leading-relaxed mb-8 max-w-3xl">
                 Nu politicienii vor uni România, ci oamenii simpli, care aleg să
                 facă bine fără să ceară nimic în schimb. Când diaspora se
                 întoarce cu inima spre cei rămași acasă, iar cei de acasă
@@ -696,13 +762,8 @@ export default function HomePage() {
                   <p className="text-orange-700/80 text-lg leading-relaxed mb-4">
                     {article.description}
                   </p>
-                  <Button
-                    asChild
-                    className="bg-orange-600 hover:bg-orange-700 text-lg button-hover"
-                  >
-                    <Link href={`/articol/${article.slug}`}>
-                      Citește mai mult →
-                    </Link>
+                  <Button className="bg-orange-600 hover:bg-orange-700 text-lg button-hover">
+                    Serviciu in dezvoltare, revenim in curand!
                   </Button>
                 </CardContent>
               </Card>
