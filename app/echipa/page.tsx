@@ -46,53 +46,39 @@ const teamMembers = [
   {
     id: 1,
     name: "Doamna Cristina",
-    role: "Coordonator General & Coordonator Germania",
+    role: "Coordonator General ",
     country: "Germania",
-
     image: "/dna_cristina.png",
   },
   {
     id: 2,
     name: "Domnul Dan",
     role: "Coordonator Proiecte",
-    country: "Franța",
-
+    country: "Belgia",
     image: "/dl-dan.png",
   },
   {
     id: 3,
-    name: "Doamna X",
-    role: "Reprezentant  DiasporaEU",
+    name: "Doamna Tania",
+    role: "Coordonator Bulgaria",
     country: "Bulgaria",
-
     image: "/anonim1.png",
   },
   {
     id: 4,
-    name: "Domnul Y",
-    role: "Specialist Integrare",
-    country: "Spania",
-
+    name: "Domnul Florin",
+    role: "Asistenta Juridica",
+    country: "Germania",
     image: "/anonim2.png",
   },
-  // {
-  //   id: 5,
-  //   name: "Elena Radu",
-  //   role: "Responsabil Comunicare",
-  //   country: "Olanda",
-  //   description:
-  //     "Gestionează comunicarea organizației și menține legătura cu comunitățile românești.",
-  //   image: "/placeholder.svg?height=300&width=300",
-  // },
-  // {
-  //   id: 6,
-  //   name: "Andrei Stoica",
-  //   role: "Coordonator Proiecte",
-  //   country: "Germania",
-  //   description:
-  //     "Dezvoltă și implementează proiecte de sprijin pentru românii din diaspora.",
-  //   image: "/placeholder.svg?height=300&width=300",
-  // },
+  {
+    id: 5,
+    name: "Doamna Gilda",
+    role: "Coordonator Romania",
+    country: "Romania",
+    image: "/dna-gilda.jpeg",
+    imagePosition: "object-[center_10%]",
+  },
 ];
 
 export default function EchipaPage() {
@@ -128,7 +114,7 @@ export default function EchipaPage() {
           >
             Suntem o echipă dedicată de voluntari români răspândiți în toată
             Europa, uniți de dorința comună de a ajuta compatrioții noștri din
-            diaspora.
+            diaspora și frații din România.
           </p>
           <div
             className={`bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-xl border border-orange-200 transition-all duration-1000 delay-500 ${
@@ -153,6 +139,75 @@ export default function EchipaPage() {
       <div className="traditional-pattern h-12 relative">
         <div className="absolute inset-0 bg-gradient-to-r from-orange-200 via-orange-300 to-orange-200 opacity-50"></div>
       </div>
+
+      {/* Founders Section */}
+      <section className="py-16 px-4 bg-gradient-to-b from-orange-50/50 to-white">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl font-bold text-center text-orange-800 mb-12 romanian-accent animate-fade-in">
+            Fondatori
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+            {/* Left Founder */}
+            <div className="flex flex-col items-center animate-slide-up">
+              <div className="relative w-64 h-64 md:w-[22rem] md:h-[22rem] rounded-full overflow-hidden border-4 border-orange-300 shadow-xl mb-6">
+                <Image
+                  src="/dany-fondator.jpeg"
+                  alt="Dany"
+                  fill
+                  className="object-cover hover:scale-110 transition-transform duration-500"
+                  sizes="(max-width: 768px) 256px, 352px"
+                  priority
+                />
+              </div>
+              <h3 className="text-2xl font-bold text-orange-800 text-center">
+                Dany
+              </h3>
+            </div>
+
+            {/* Center Founders */}
+            <div
+              className="flex flex-col items-center animate-slide-up"
+              style={{ animationDelay: "0.2s" }}
+            >
+              <div className="relative w-64 h-64 md:w-[24rem] md:h-[24rem] rounded-full overflow-hidden border-4 border-orange-400 shadow-xl mb-6">
+                <Image
+                  src="/Ghita-Cristina-Ovidiu.jpeg"
+                  alt="Ghită, Cristina și Ovidiu"
+                  fill
+                  className="object-cover hover:scale-110 transition-transform duration-500"
+                  sizes="(max-width: 768px) 256px, 384px"
+                  priority
+                />
+              </div>
+              <div className="text-center">
+                <h3 className="text-2xl font-bold text-orange-800 whitespace-nowrap">
+                  Ghiță • Cristina • Ovidiu
+                </h3>
+              </div>
+            </div>
+
+            {/* Right Founder */}
+            <div
+              className="flex flex-col items-center animate-slide-up"
+              style={{ animationDelay: "0.4s" }}
+            >
+              <div className="relative w-64 h-64 md:w-[22rem] md:h-[22rem] rounded-full overflow-hidden border-4 border-orange-300 shadow-xl mb-6">
+                <Image
+                  src="/elena-fondator.jpeg"
+                  alt="Elena"
+                  fill
+                  className="object-cover hover:scale-110 transition-transform duration-500"
+                  sizes="(max-width: 768px) 256px, 352px"
+                  priority
+                />
+              </div>
+              <h3 className="text-2xl font-bold text-orange-800 text-center">
+                Elena
+              </h3>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Team Members Section */}
       <section className="py-16 px-4 bg-gradient-to-b from-orange-50/50 to-white">
@@ -201,7 +256,9 @@ export default function EchipaPage() {
                     src={member.image || "/placeholder.svg"}
                     alt={member.name}
                     fill
-                    className="object-cover transition-transform duration-500 hover:scale-110"
+                    className={`object-cover transition-transform duration-500 hover:scale-110 ${
+                      member.imagePosition || ""
+                    }`}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-orange-900/20 to-transparent"></div>
                 </div>
@@ -217,9 +274,6 @@ export default function EchipaPage() {
                   <p className="text-lg font-medium text-orange-600 mb-3">
                     {member.role}
                   </p>
-                  {/* <p className="text-orange-700/80 leading-relaxed">
-                    {member.description}
-                  </p> */}
                 </CardContent>
               </Card>
             ))}

@@ -243,7 +243,7 @@ function BackgroundMusic() {
       {/* Audio element with aggressive autoplay settings */}
       <audio
         ref={audioRef}
-        src="/imn_romania.mp3"
+        src="/laura-olteanu.mp3"
         preload="auto"
         autoPlay
         loop
@@ -373,6 +373,113 @@ export default function HomePage() {
           />
           <div className="absolute inset-0 bg-gradient-to-br from-orange-900/40 via-orange-800/30 to-orange-700/40"></div>
         </div>
+        {/* Respect și Transparență Section */}
+        <section className="py-16 px-4 bg-white relative z-10">
+          <div className="max-w-4xl mx-auto space-y-8">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-orange-800 mb-6">
+                Respect și Transparență
+              </h2>
+              <p className="text-xl text-gray-700 leading-relaxed">
+                Principiile și valorile care ne ghidează activitatea
+              </p>
+            </div>
+
+            {/* Cards Grid */}
+            <div className="grid md:grid-cols-2 gap-8">
+              <Card className="border-2 border-orange-200 transform hover:scale-105 transition-transform duration-300">
+                <CardContent className="p-8">
+                  <h3 className="text-2xl font-bold text-orange-800 mb-6 flex items-center">
+                    <span className="text-3xl mr-4">🏛️</span>
+                    Independența Noastră
+                  </h3>
+                  <div className="text-gray-700 leading-relaxed space-y-4">
+                    <p>
+                      <strong>
+                        Suntem complet independeți și nu suntem asociați,
+                        susținuți sau finanțați de niciun partid politic, guvern
+                        sau organizații politice.
+                      </strong>
+                    </p>
+                    <p>
+                      Activitatea noastră este bazată exclusiv pe voluntariat și
+                      donații private din partea comunității românești.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="border-2 border-orange-200 transform hover:scale-105 transition-transform duration-300">
+                <CardContent className="p-8">
+                  <h3 className="text-2xl font-bold text-orange-800 mb-6 flex items-center">
+                    <span className="text-3xl mr-4">🤝</span>
+                    Misiunea de Voluntariat
+                  </h3>
+                  <div className="text-gray-700 leading-relaxed space-y-4">
+                    <p>
+                      Suntem o rețea de voluntari români din toate colțurile
+                      Europei, uniți de dorința comună de a ajuta compatrioții
+                      noștri.
+                    </p>
+                    <p>
+                      Serviciile noastre sunt oferite gratuit, din solidaritate
+                      și empatie.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="border-2 border-orange-200 transform hover:scale-105 transition-transform duration-300">
+                <CardContent className="p-8">
+                  <h3 className="text-2xl font-bold text-orange-800 mb-6 flex items-center">
+                    <span className="text-3xl mr-4">⚠️</span>
+                    Poziția Noastră Fermă
+                  </h3>
+                  <div className="text-gray-700 leading-relaxed space-y-4">
+                    <p>
+                      <strong>Condamnăm ferm</strong> orice act de dezinformare,
+                      propagandă sau manipulare a opiniei publice.
+                    </p>
+                    <p>Susținem doar dragostea de țară și a fraților noștri.</p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="border-2 border-orange-200 transform hover:scale-105 transition-transform duration-300">
+                <CardContent className="p-8">
+                  <h3 className="text-2xl font-bold text-orange-800 mb-6 flex items-center">
+                    <span className="text-3xl mr-4">🔒</span>
+                    Confidențialitatea și Respectul
+                  </h3>
+                  <div className="text-gray-700 leading-relaxed space-y-4">
+                    <p>
+                      Respectăm pe deplin confidențialitatea și demnitatea
+                      tuturor persoanelor care apelează la serviciile noastre.
+                    </p>
+                    <p>
+                      Toate interacțiunile noastre sunt bazate pe respect
+                      mutual, empatie și solidaritate între români.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Commitment Card */}
+            <Card className="bg-orange-50 border-2 border-orange-300 transform hover:scale-105 transition-transform duration-300">
+              <CardContent className="p-8 text-center">
+                <h3 className="text-3xl font-bold text-orange-800 mb-4">
+                  Angajamentul Nostru
+                </h3>
+                <p className="text-xl text-gray-700 leading-relaxed">
+                  Ne angajăm să rămânem fideli acestor principii și să oferim
+                  sprijin autentic și dezinteresat tuturor românilor care au
+                  nevoie de ajutor în diaspora europeană.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
 
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -466,158 +573,6 @@ export default function HomePage() {
           ✦
         </div>
 
-        {/* Diaspora Products Section */}
-        <div className="max-w-7xl mx-auto mt-16 px-4 grid md:grid-cols-2 gap-8 items-center">
-          <div className="animate-slide-up">
-            <h2 className="text-3xl sm:text-4xl font-bold text-orange-800 mb-6">
-              Gustul de acasă în diaspora
-            </h2>
-            <p className="text-lg text-orange-900/80 leading-relaxed mb-8">
-              Noi în diaspora ne dorim să gustăm fructe și legume românești, cu
-              gustul de odinioară. Ne-am propus dezvoltarea unei rețele de
-              voluntari pentru a ajuta micii antreprenori să își vândă produsele
-              peste hotare. Împreună putem aduce bucuria și savoarea produselor
-              românești autentice mai aproape de casele românilor din
-              străinătate.
-            </p>
-            <p className="text-lg text-orange-900/80 leading-relaxed">
-              Prin această inițiativă, nu doar că sprijinim agricultura locală
-              și micii producători din România, dar aducem și un strop de acasă
-              în viața românilor din diaspora. Este o punte între tradiție și
-              prezent, între gusturile copilăriei și viața de zi cu zi în
-              străinătate.
-            </p>
-          </div>
-          {/* Responsive image container with proper Next.js Image optimization */}
-          <div className="relative animate-fade-in">
-            <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-[4/3] w-full">
-              <Image
-                src="/cules-rosii.png"
-                alt="Roșii românești proaspete - produse tradiționale din România"
-                fill
-                className="object-cover transform hover:scale-105 transition-transform duration-300"
-                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 40vw"
-                priority={false}
-              />
-              {/* Gradient overlay for better visual appeal */}
-              <div className="absolute inset-0 bg-gradient-to-t from-orange-900/20 to-transparent"></div>
-            </div>
-          </div>
-        </div>
-
-        <div
-          className="absolute bottom-20 right-4 sm:right-10 text-orange-500/30 text-3xl sm:text-4xl animate-bounce-gentle"
-          style={{ animationDelay: "1s" }}
-        >
-          ✦
-        </div>
-
-        <div className="max-w-7xl mx-auto mt-16 px-4 grid md:grid-cols-2 gap-8 items-center">
-          {/* Responsive image container with proper Next.js Image optimization - moved to left */}
-          <div className="relative animate-fade-in order-1">
-            <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-[4/3] w-full">
-              <Image
-                src="/mamaie-coase.jpg"
-                alt="Batrana coase"
-                fill
-                className="object-cover transform hover:scale-105 transition-transform duration-300"
-                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 40vw"
-                priority={false}
-              />
-              {/* Gradient overlay for better visual appeal */}
-              <div className="absolute inset-0 bg-gradient-to-t from-orange-900/20 to-transparent"></div>
-            </div>
-          </div>
-
-          {/* Text content moved to right */}
-          <div className="animate-slide-up order-2">
-            <h2 className="text-3xl sm:text-4xl font-bold text-orange-800 mb-6">
-              Nu uitam nici de cei batrani
-            </h2>
-            <p className="text-lg text-orange-900/80 leading-relaxed mb-8">
-              Știm cât de greu este să fii bătrân în România, dar noi,
-              voluntarii de peste hotare, ne dorim să-i ajutăm! Planificăm o
-              rețea de voluntari pentru bătrânii care încearcă să își câștige o
-              pâine cu o legătură de pătrunjel sau produse croșetate.
-            </p>
-            <p className="text-lg text-orange-900/80 leading-relaxed">
-              Prin această inițiativă sprijinim bătrânii noștri și creăm o punte
-              de solidaritate între românii din diaspora și cei de acasă. Este
-              modalitatea noastră de a arăta respect pentru generația care ne-a
-              crescut și ne-a învățat valorile românești.
-            </p>
-          </div>
-        </div>
-
-        <div className="max-w-7xl mx-auto mt-16 px-4 grid md:grid-cols-2 gap-8 items-center">
-          <div className="animate-slide-up">
-            <h2 className="text-3xl sm:text-4xl font-bold text-orange-800 mb-6">
-              De la joaca în livadă, la sprijin peste granițe
-            </h2>
-            <p className="text-lg text-orange-900/80 leading-relaxed mb-8">
-              Așa cum în copilărie ne sprijineam unii pe alții să ajungem la
-              caisele coapte din vârful copacului, cu o naturalețe și o bucurie
-              firească, tot așa putem astăzi – chiar dacă suntem departe – să ne
-              întindem mâna unii altora. Prieteniile de atunci nu aveau nevoie
-              de multe cuvinte, ci doar de dorința sinceră de a ajuta.
-            </p>
-            <p className="text-lg text-orange-900/80 leading-relaxed">
-              Astăzi, ca adulți, reaprindem acea empatie și inocență, oferind
-              sprijin compatrioților noștri. E un gest simplu, dar plin de sens:
-              diaspora și România, din nou împreună – ca niște copii ce culeg
-              fructe, doar că acum culegem speranță, solidaritate și gustul de
-              acasă.
-            </p>
-          </div>
-          {/* Responsive image container with proper Next.js Image optimization */}
-          <div className="relative animate-fade-in">
-            <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-[4/3] w-full">
-              <Image
-                src="/la-cirese.jpg"
-                alt="Roșii românești proaspete - produse tradiționale din România"
-                fill
-                className="object-cover transform hover:scale-105 transition-transform duration-300"
-                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 40vw"
-                priority={false}
-              />
-              {/* Gradient overlay for better visual appeal */}
-              <div className="absolute inset-0 bg-gradient-to-t from-orange-900/20 to-transparent"></div>
-            </div>
-          </div>
-        </div>
-
-        <div className="max-w-7xl mx-auto mt-16 px-4 relative">
-          {/* Large centered image with text overlay */}
-          <div className="relative w-full aspect-[8/21] lg:aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl">
-            <Image
-              src="/costum-popular.jpg"
-              alt="Costum popular românesc tradițional"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1280px) 100vw, 1280px"
-              priority={true}
-            />
-            {/* Dark gradient overlay for text readability */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/50 to-black/30"></div>
-
-            {/* Text content positioned over the image */}
-            <div className="absolute inset-0 flex flex-col justify-center p-8 md:p-16 text-white animate-slide-up">
-              <h2 className="text-3xl lg:text-5xl sm:text-4xl font-bold mb-6">
-                Români pentru România – Puterea e în noi!
-              </h2>
-              <p className="text-2xl leading-relaxed mb-8 max-w-3xl">
-                Când ne unim, nimic nu ne poate opri. Suntem răspândiți în toată
-                lumea, dar rădăcinile noastre rămân adânc înfipte în pământul
-                românesc. Fiecare gest de sprijin, fiecare produs cumpărat de la
-                un român, fiecare voluntar care se implică – e un pas spre o
-                Românie mai puternică, mai demnă, mai suverană. Nu așteptăm
-                salvarea din afară. Ne ridicăm singuri – pentru că știm cine
-                suntem.
-              </p>
-            </div>
-          </div>
-        </div>
-
         <div className="max-w-7xl mx-auto mt-16 px-4 relative">
           {/* Large centered image with text overlay */}
           <div className="relative w-full aspect-[8/21] lg:aspect-[16/12] rounded-2xl overflow-hidden shadow-2xl">
@@ -646,6 +601,38 @@ export default function HomePage() {
                 cel mai curat act de patriotism. Așa reparăm ruptura: prin
                 fapte, nu vorbe. România începe din sufletul fiecăruia dintre
                 noi.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="max-w-7xl mx-auto mt-16 px-4 relative">
+          {/* Large centered image with text overlay */}
+          <div className="relative w-full aspect-[8/21] lg:aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl">
+            <Image
+              src="/costum-popular.jpg"
+              alt="Costum popular românesc tradițional"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1280px) 100vw, 1280px"
+              priority={true}
+            />
+            {/* Dark gradient overlay for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/50 to-black/30"></div>
+
+            {/* Text content positioned over the image */}
+            <div className="absolute inset-0 flex flex-col justify-center p-8 md:p-16 text-white animate-slide-up">
+              <h2 className="text-2xl lg:text-5xl sm:text-4xl font-bold mb-6">
+                Români pentru România – Puterea e în noi!
+              </h2>
+              <p className="text-xl leading-relaxed mb-8 max-w-3xl">
+                Când ne unim, nimic nu ne poate opri. Suntem răspândiți în toată
+                lumea, dar rădăcinile noastre rămân adânc înfipte în pământul
+                românesc. Fiecare gest de sprijin, fiecare produs cumpărat de la
+                un român, fiecare voluntar care se implică – e un pas spre o
+                Românie mai puternică, mai demnă, mai suverană. Nu așteptăm
+                salvarea din afară. Ne ridicăm singuri – pentru că știm cine
+                suntem.
               </p>
             </div>
           </div>

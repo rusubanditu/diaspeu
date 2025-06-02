@@ -9,7 +9,8 @@ const menuItems = [
   { href: "/", label: "Acasă" },
   { href: "/echipa", label: "Echipa" },
   { href: "/proiecte", label: "Proiecte" },
-  //{ href: "/tari", label: "Țări" },
+  { href: "/pagina-speciala", label: "Servicii" },
+  { href: "/locuri-de-munca", label: "Locuri de muncă" },
   { href: "/respect", label: "Respect" },
   { href: "/contact", label: "Contact" },
 ];
@@ -220,12 +221,12 @@ export function Navigation() {
             : "bg-white shadow-lg border-b-4 border-orange-600"
         )}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-2 lg:px-4">
           <div className="flex justify-between items-center h-20">
             {/* Logo with Animated Romanian Flag */}
             <Link
               href="/"
-              className="flex items-center space-x-3 group"
+              className="flex items-center space-x-2 group"
               onClick={closeMobileMenu}
             >
               <div className="relative transition-transform duration-300 group-hover:scale-105">

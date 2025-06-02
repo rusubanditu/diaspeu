@@ -1,118 +1,140 @@
-import { Card, CardContent } from "@/components/ui/card"
+import { Card, CardContent } from "@/components/ui/card";
+import Image from "next/image";
 
 export default function RespectPage() {
   return (
-    <div className="min-h-screen py-8">
-      {/* Header */}
-      <section className="warm-gradient py-16 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl font-bold text-red-800 mb-6">Respect și Transparență</h1>
-          <p className="text-xl text-gray-700 leading-relaxed">Principiile și valorile care ne ghidează activitatea</p>
-        </div>
-      </section>
+    <div className="min-h-screen py-8 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Card 1 */}
+        <Card className="relative">
+          <div className="absolute -rotate-12 top-4 right-4 z-10">
+            <span className="font-bold text-3xl">
+              <span className="text-blue-600">RES</span>
+              <span className="text-yellow-500">PE</span>
+              <span className="text-red-600">CT</span>
+            </span>
+          </div>
+          <div className="relative h-64">
+            <Image
+              src="/placeholder.svg"
+              alt="Profile"
+              fill
+              className="object-cover rounded-t-lg"
+            />
+          </div>
+          <CardContent className="p-6">
+            <h2 className="text-2xl font-bold mb-2">John Doe - Germany</h2>
+            <p className="text-gray-600">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </CardContent>
+        </Card>
 
-      {/* Traditional Pattern Divider */}
-      <div className="traditional-pattern h-8"></div>
+        {/* Card 2 */}
+        <Card className="relative">
+          <div className="absolute -rotate-12 top-4 right-4 z-10">
+            <span className="font-bold text-3xl">
+              <span className="text-blue-600">RES</span>
+              <span className="text-yellow-500">PE</span>
+              <span className="text-red-600">CT</span>
+            </span>
+          </div>
+          <div className="relative h-64">
+            <Image
+              src="/placeholder.svg"
+              alt="Profile"
+              fill
+              className="object-cover rounded-t-lg"
+            />
+          </div>
+          <CardContent className="p-6">
+            <h2 className="text-2xl font-bold mb-2">Maria Silva - Spain</h2>
+            <p className="text-gray-600">
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </CardContent>
+        </Card>
 
-      {/* Main Content */}
-      <section className="py-16 px-4 bg-white">
-        <div className="max-w-4xl mx-auto space-y-8">
-          <Card className="border-2 border-red-200">
-            <CardContent className="p-8">
-              <h2 className="text-3xl font-bold text-red-800 mb-6 flex items-center">
-                <span className="text-4xl mr-4">🏛️</span>
-                Independența Noastră
-              </h2>
-              <div className="text-lg text-gray-700 leading-relaxed space-y-4">
-                <p>
-                  <strong>ONG România</strong> este o organizație complet independentă, care nu este asociată, susținută
-                  sau finanțată de niciun partid politic, guvern sau organizație cu interese politice.
-                </p>
-                <p>
-                  Activitatea noastră este bazată exclusiv pe voluntariat și donații private din partea comunității
-                  românești din diaspora.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
+        {/* Card 3 */}
+        <Card className="relative">
+          <div className="absolute -rotate-12 top-4 right-4 z-10">
+            <span className="font-bold text-3xl">
+              <span className="text-blue-600">RES</span>
+              <span className="text-yellow-500">PE</span>
+              <span className="text-red-600">CT</span>
+            </span>
+          </div>
+          <div className="relative h-64">
+            <Image
+              src="/placeholder.svg"
+              alt="Profile"
+              fill
+              className="object-cover rounded-t-lg"
+            />
+          </div>
+          <CardContent className="p-6">
+            <h2 className="text-2xl font-bold mb-2">Pierre Dubois - France</h2>
+            <p className="text-gray-600">
+              Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur.
+            </p>
+          </CardContent>
+        </Card>
 
-          <Card className="border-2 border-red-200">
-            <CardContent className="p-8">
-              <h2 className="text-3xl font-bold text-red-800 mb-6 flex items-center">
-                <span className="text-4xl mr-4">🤝</span>
-                Misiunea de Voluntariat
-              </h2>
-              <div className="text-lg text-gray-700 leading-relaxed space-y-4">
-                <p>
-                  Suntem o rețea de voluntari români din toate colțurile Europei, uniți de dorința comună de a ajuta
-                  compatrioții noștri care se află în situații dificile.
-                </p>
-                <p>
-                  Serviciile noastre sunt oferite gratuit, din solidaritate și empatie pentru cei care au nevoie de
-                  sprijin în momentele grele.
-                </p>
-                <p>
-                  Nu avem niciun motiv ulterior în afara dorinței sincere de a ajuta și de a crea o comunitate puternică
-                  în diaspora.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
+        {/* Card 4 */}
+        <Card className="relative">
+          <div className="absolute -rotate-12 top-4 right-4 z-10">
+            <span className="font-bold text-3xl">
+              <span className="text-blue-600">RES</span>
+              <span className="text-yellow-500">PE</span>
+              <span className="text-red-600">CT</span>
+            </span>
+          </div>
+          <div className="relative h-64">
+            <Image
+              src="/placeholder.svg"
+              alt="Profile"
+              fill
+              className="object-cover rounded-t-lg"
+            />
+          </div>
+          <CardContent className="p-6">
+            <h2 className="text-2xl font-bold mb-2">Anna Kowalski - Poland</h2>
+            <p className="text-gray-600">
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+              officia deserunt mollit anim id est laborum.
+            </p>
+          </CardContent>
+        </Card>
 
-          <Card className="border-2 border-red-200">
-            <CardContent className="p-8">
-              <h2 className="text-3xl font-bold text-red-800 mb-6 flex items-center">
-                <span className="text-4xl mr-4">⚠️</span>
-                Poziția Noastră Fermă
-              </h2>
-              <div className="text-lg text-gray-700 leading-relaxed space-y-4">
-                <p>
-                  <strong>Condamnăm ferm</strong> orice act de dezinformare, propagandă sau manipulare a opiniei
-                  publice.
-                </p>
-                <p>
-                  Nu promovăm nicio agendă politică și nu susținem niciun candidat sau partid politic din România sau
-                  din țările în care activăm.
-                </p>
-                <p>
-                  Activitatea noastră se concentrează exclusiv pe ajutorarea concretă a românilor din diaspora, fără
-                  implicații politice.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="border-2 border-red-200">
-            <CardContent className="p-8">
-              <h2 className="text-3xl font-bold text-red-800 mb-6 flex items-center">
-                <span className="text-4xl mr-4">🔒</span>
-                Confidențialitatea și Respectul
-              </h2>
-              <div className="text-lg text-gray-700 leading-relaxed space-y-4">
-                <p>
-                  Respectăm pe deplin confidențialitatea și demnitatea tuturor persoanelor care apelează la serviciile
-                  noastre.
-                </p>
-                <p>
-                  Nu colectăm, nu stocăm și nu partajăm informații personale fără consimțământul explicit al persoanelor
-                  implicate.
-                </p>
-                <p>Toate interacțiunile noastre sunt bazate pe respect mutual, empatie și solidaritate între români.</p>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-red-50 border-2 border-red-300">
-            <CardContent className="p-8 text-center">
-              <h2 className="text-3xl font-bold text-red-800 mb-4">Angajamentul Nostru</h2>
-              <p className="text-xl text-gray-700 leading-relaxed">
-                Ne angajăm să rămânem fideli acestor principii și să oferim sprijin autentic și dezinteresat tuturor
-                românilor care au nevoie de ajutor în diaspora europeană.
-              </p>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
+        {/* Card 5 */}
+        <Card className="relative">
+          <div className="absolute -rotate-12 top-4 right-4 z-10">
+            <span className="font-bold text-3xl">
+              <span className="text-blue-600">RES</span>
+              <span className="text-yellow-500">PE</span>
+              <span className="text-red-600">CT</span>
+            </span>
+          </div>
+          <div className="relative h-64">
+            <Image
+              src="/placeholder.svg"
+              alt="Profile"
+              fill
+              className="object-cover rounded-t-lg"
+            />
+          </div>
+          <CardContent className="p-6">
+            <h2 className="text-2xl font-bold mb-2">Marco Rossi - Italy</h2>
+            <p className="text-gray-600">
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+              accusantium doloremque laudantium.
+            </p>
+          </CardContent>
+        </Card>
+      </div>
     </div>
-  )
+  );
 }
