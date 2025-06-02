@@ -589,7 +589,7 @@ export default function HomePage() {
 
             {/* Text content positioned over the image */}
             <div className="absolute inset-0 flex flex-col justify-center p-8 md:p-16 text-white animate-slide-up">
-              <h2 className="text-3xl lg:text-5xl sm:text-4xl font-bold mb-6">
+              <h2 className="text-xl lg:text-5xl sm:text-4xl font-bold mb-6">
                 Din dragoste pentru ai noștri – România se leagă din nou
               </h2>
               <p className="text-lg lg:text-2xl leading-relaxed mb-8 max-w-3xl">
@@ -622,10 +622,10 @@ export default function HomePage() {
 
             {/* Text content positioned over the image */}
             <div className="absolute inset-0 flex flex-col justify-center p-8 md:p-16 text-white animate-slide-up">
-              <h2 className="text-2xl lg:text-5xl sm:text-4xl font-bold mb-6">
+              <h2 className="text-xl lg:text-5xl sm:text-4xl font-bold mb-6">
                 Români pentru România – Puterea e în noi!
               </h2>
-              <p className="text-xl leading-relaxed mb-8 max-w-3xl">
+              <p className="text-lg leading-relaxed mb-8 max-w-3xl">
                 Când ne unim, nimic nu ne poate opri. Suntem răspândiți în toată
                 lumea, dar rădăcinile noastre rămân adânc înfipte în pământul
                 românesc. Fiecare gest de sprijin, fiecare produs cumpărat de la
