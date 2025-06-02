@@ -373,121 +373,6 @@ export default function HomePage() {
           />
           <div className="absolute inset-0 bg-gradient-to-br from-orange-900/40 via-orange-800/30 to-orange-700/40"></div>
         </div>
-        {/* Respect și Transparență Section */}
-        <section className="py-12 sm:py-16 px-4 bg-white relative z-10">
-          <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8">
-            <div className="text-center mb-8 sm:mb-12">
-              <h2 className="text-3xl sm:text-4xl font-bold text-orange-800 mb-4 sm:mb-6">
-                Respect și Transparență
-              </h2>
-              <p className="text-lg sm:text-xl text-gray-700 leading-relaxed">
-                Principiile și valorile care ne ghidează activitatea
-              </p>
-            </div>
-
-            {/* Cards Grid */}
-            <div className="grid sm:grid-cols-2 gap-4 sm:gap-8">
-              <Card className="border-2 border-orange-200 transform hover:scale-105 transition-transform duration-300">
-                <CardContent className="p-4 sm:p-8">
-                  <h3 className="text-xl sm:text-2xl font-bold text-orange-800 mb-4 sm:mb-6 flex items-center">
-                    <span className="text-2xl sm:text-3xl mr-3 sm:mr-4">
-                      🏛️
-                    </span>
-                    Independența Noastră
-                  </h3>
-                  <div className="text-sm sm:text-base text-gray-700 leading-relaxed space-y-3 sm:space-y-4">
-                    <p>
-                      <strong>
-                        Suntem complet independeți și nu suntem asociați,
-                        susținuți sau finanțați de niciun partid politic, guvern
-                        sau organizații politice.
-                      </strong>
-                    </p>
-                    <p>
-                      Activitatea noastră este bazată exclusiv pe voluntariat și
-                      donații private din partea comunității românești.
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-2 border-orange-200 transform hover:scale-105 transition-transform duration-300">
-                <CardContent className="p-4 sm:p-8">
-                  <h3 className="text-xl sm:text-2xl font-bold text-orange-800 mb-4 sm:mb-6 flex items-center">
-                    <span className="text-2xl sm:text-3xl mr-3 sm:mr-4">
-                      🤝
-                    </span>
-                    Misiunea de Voluntariat
-                  </h3>
-                  <div className="text-sm sm:text-base text-gray-700 leading-relaxed space-y-3 sm:space-y-4">
-                    <p>
-                      Suntem o rețea de voluntari români din toate colțurile
-                      Europei, uniți de dorința comună de a ajuta compatrioții
-                      noștri.
-                    </p>
-                    <p>
-                      Serviciile noastre sunt oferite gratuit, din solidaritate
-                      și empatie.
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-2 border-orange-200 transform hover:scale-105 transition-transform duration-300">
-                <CardContent className="p-4 sm:p-8">
-                  <h3 className="text-xl sm:text-2xl font-bold text-orange-800 mb-4 sm:mb-6 flex items-center">
-                    <span className="text-2xl sm:text-3xl mr-3 sm:mr-4">
-                      ⚠️
-                    </span>
-                    Poziția Noastră Fermă
-                  </h3>
-                  <div className="text-sm sm:text-base text-gray-700 leading-relaxed space-y-3 sm:space-y-4">
-                    <p>
-                      <strong>Condamnăm ferm</strong> orice act de dezinformare,
-                      propagandă sau manipulare a opiniei publice.
-                    </p>
-                    <p>Susținem doar dragostea de țară și a fraților noștri.</p>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-2 border-orange-200 transform hover:scale-105 transition-transform duration-300">
-                <CardContent className="p-4 sm:p-8">
-                  <h3 className="text-xl sm:text-2xl font-bold text-orange-800 mb-4 sm:mb-6 flex items-center">
-                    <span className="text-2xl sm:text-3xl mr-3 sm:mr-4">
-                      🔒
-                    </span>
-                    Confidențialitatea și Respectul
-                  </h3>
-                  <div className="text-sm sm:text-base text-gray-700 leading-relaxed space-y-3 sm:space-y-4">
-                    <p>
-                      Respectăm pe deplin confidențialitatea și demnitatea
-                      tuturor persoanelor care apelează la serviciile noastre.
-                    </p>
-                    <p>
-                      Toate interacțiunile noastre sunt bazate pe respect
-                      mutual, empatie și solidaritate între români.
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-
-            {/* Commitment Card */}
-            <Card className="bg-orange-50 border-2 border-orange-300 transform hover:scale-105 transition-transform duration-300">
-              <CardContent className="p-4 sm:p-8 text-center">
-                <h3 className="text-2xl sm:text-3xl font-bold text-orange-800 mb-3 sm:mb-4">
-                  Angajamentul Nostru
-                </h3>
-                <p className="text-base sm:text-xl text-gray-700 leading-relaxed">
-                  Ne angajăm să rămânem fideli acestor principii și să oferim
-                  sprijin autentic și dezinteresat tuturor românilor care au
-                  nevoie de ajutor în diaspora europeană.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
 
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -567,6 +452,114 @@ export default function HomePage() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Respect și Transparență Section */}
+      <section className="py-12 sm:py-16 px-4 bg-white relative z-10">
+        <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-orange-800 mb-4 sm:mb-6">
+              Respect și Transparență
+            </h2>
+            <p className="text-lg sm:text-xl text-gray-700 leading-relaxed">
+              Principiile și valorile care ne ghidează activitatea
+            </p>
+          </div>
+
+          {/* Cards Grid */}
+          <div className="grid sm:grid-cols-2 gap-4 sm:gap-8">
+            <Card className="border-2 border-orange-200 transform hover:scale-105 transition-transform duration-300">
+              <CardContent className="p-4 sm:p-8">
+                <h3 className="text-xl sm:text-2xl font-bold text-orange-800 mb-4 sm:mb-6 flex items-center">
+                  <span className="text-2xl sm:text-3xl mr-3 sm:mr-4">🏛️</span>
+                  Independența Noastră
+                </h3>
+                <div className="text-sm sm:text-base text-gray-700 leading-relaxed space-y-3 sm:space-y-4">
+                  <p>
+                    <strong>
+                      Suntem complet independeți și nu suntem asociați,
+                      susținuți sau finanțați de niciun partid politic, guvern
+                      sau organizații politice.
+                    </strong>
+                  </p>
+                  <p>
+                    Activitatea noastră este bazată exclusiv pe voluntariat și
+                    donații private din partea comunității românești.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 border-orange-200 transform hover:scale-105 transition-transform duration-300">
+              <CardContent className="p-4 sm:p-8">
+                <h3 className="text-xl sm:text-2xl font-bold text-orange-800 mb-4 sm:mb-6 flex items-center">
+                  <span className="text-2xl sm:text-3xl mr-3 sm:mr-4">🤝</span>
+                  Misiunea de Voluntariat
+                </h3>
+                <div className="text-sm sm:text-base text-gray-700 leading-relaxed space-y-3 sm:space-y-4">
+                  <p>
+                    Suntem o rețea de voluntari români din toate colțurile
+                    Europei, uniți de dorința comună de a ajuta compatrioții
+                    noștri.
+                  </p>
+                  <p>
+                    Serviciile noastre sunt oferite gratuit, din solidaritate și
+                    empatie.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 border-orange-200 transform hover:scale-105 transition-transform duration-300">
+              <CardContent className="p-4 sm:p-8">
+                <h3 className="text-xl sm:text-2xl font-bold text-orange-800 mb-4 sm:mb-6 flex items-center">
+                  <span className="text-2xl sm:text-3xl mr-3 sm:mr-4">⚠️</span>
+                  Poziția Noastră Fermă
+                </h3>
+                <div className="text-sm sm:text-base text-gray-700 leading-relaxed space-y-3 sm:space-y-4">
+                  <p>
+                    <strong>Condamnăm ferm</strong> orice act de dezinformare,
+                    propagandă sau manipulare a opiniei publice.
+                  </p>
+                  <p>Susținem doar dragostea de țară și a fraților noștri.</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 border-orange-200 transform hover:scale-105 transition-transform duration-300">
+              <CardContent className="p-4 sm:p-8">
+                <h3 className="text-xl sm:text-2xl font-bold text-orange-800 mb-4 sm:mb-6 flex items-center">
+                  <span className="text-2xl sm:text-3xl mr-3 sm:mr-4">🔒</span>
+                  Confidențialitatea și Respectul
+                </h3>
+                <div className="text-sm sm:text-base text-gray-700 leading-relaxed space-y-3 sm:space-y-4">
+                  <p>
+                    Respectăm pe deplin confidențialitatea și demnitatea tuturor
+                    persoanelor care apelează la serviciile noastre.
+                  </p>
+                  <p>
+                    Toate interacțiunile noastre sunt bazate pe respect mutual,
+                    empatie și solidaritate între români.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Commitment Card */}
+          <Card className="bg-orange-50 border-2 border-orange-300 transform hover:scale-105 transition-transform duration-300">
+            <CardContent className="p-4 sm:p-8 text-center">
+              <h3 className="text-2xl sm:text-3xl font-bold text-orange-800 mb-3 sm:mb-4">
+                Angajamentul Nostru
+              </h3>
+              <p className="text-base sm:text-xl text-gray-700 leading-relaxed">
+                Ne angajăm să rămânem fideli acestor principii și să oferim
+                sprijin autentic și dezinteresat tuturor românilor care au
+                nevoie de ajutor în diaspora europeană.
+              </p>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
