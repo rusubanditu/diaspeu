@@ -233,10 +233,10 @@ export function Navigation() {
                 <AnimatedRomanianFlag />
               </div>
               <div className="animate-fade-in">
-                <h1 className="text-2xl font-bold text-orange-700 group-hover:text-orange-600 transition-colors ">
+                <h1 className="text-lg lg:text-2xl font-bold text-orange-700 group-hover:text-orange-600 transition-colors ">
                   Voluntar în Europa
                 </h1>
-                <p className="text-3xl text-orange-600/80 lg:pl-28">
+                <p className="text-xl lg:text-3xl text-orange-600/80 lg:pl-28">
                   Suveran român
                 </p>
               </div>

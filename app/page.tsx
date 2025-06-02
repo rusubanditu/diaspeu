@@ -374,26 +374,28 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-br from-orange-900/40 via-orange-800/30 to-orange-700/40"></div>
         </div>
         {/* Respect și Transparență Section */}
-        <section className="py-16 px-4 bg-white relative z-10">
-          <div className="max-w-4xl mx-auto space-y-8">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-orange-800 mb-6">
+        <section className="py-12 sm:py-16 px-4 bg-white relative z-10">
+          <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8">
+            <div className="text-center mb-8 sm:mb-12">
+              <h2 className="text-3xl sm:text-4xl font-bold text-orange-800 mb-4 sm:mb-6">
                 Respect și Transparență
               </h2>
-              <p className="text-xl text-gray-700 leading-relaxed">
+              <p className="text-lg sm:text-xl text-gray-700 leading-relaxed">
                 Principiile și valorile care ne ghidează activitatea
               </p>
             </div>
 
             {/* Cards Grid */}
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid sm:grid-cols-2 gap-4 sm:gap-8">
               <Card className="border-2 border-orange-200 transform hover:scale-105 transition-transform duration-300">
-                <CardContent className="p-8">
-                  <h3 className="text-2xl font-bold text-orange-800 mb-6 flex items-center">
-                    <span className="text-3xl mr-4">🏛️</span>
+                <CardContent className="p-4 sm:p-8">
+                  <h3 className="text-xl sm:text-2xl font-bold text-orange-800 mb-4 sm:mb-6 flex items-center">
+                    <span className="text-2xl sm:text-3xl mr-3 sm:mr-4">
+                      🏛️
+                    </span>
                     Independența Noastră
                   </h3>
-                  <div className="text-gray-700 leading-relaxed space-y-4">
+                  <div className="text-sm sm:text-base text-gray-700 leading-relaxed space-y-3 sm:space-y-4">
                     <p>
                       <strong>
                         Suntem complet independeți și nu suntem asociați,
@@ -410,12 +412,14 @@ export default function HomePage() {
               </Card>
 
               <Card className="border-2 border-orange-200 transform hover:scale-105 transition-transform duration-300">
-                <CardContent className="p-8">
-                  <h3 className="text-2xl font-bold text-orange-800 mb-6 flex items-center">
-                    <span className="text-3xl mr-4">🤝</span>
+                <CardContent className="p-4 sm:p-8">
+                  <h3 className="text-xl sm:text-2xl font-bold text-orange-800 mb-4 sm:mb-6 flex items-center">
+                    <span className="text-2xl sm:text-3xl mr-3 sm:mr-4">
+                      🤝
+                    </span>
                     Misiunea de Voluntariat
                   </h3>
-                  <div className="text-gray-700 leading-relaxed space-y-4">
+                  <div className="text-sm sm:text-base text-gray-700 leading-relaxed space-y-3 sm:space-y-4">
                     <p>
                       Suntem o rețea de voluntari români din toate colțurile
                       Europei, uniți de dorința comună de a ajuta compatrioții
@@ -430,12 +434,14 @@ export default function HomePage() {
               </Card>
 
               <Card className="border-2 border-orange-200 transform hover:scale-105 transition-transform duration-300">
-                <CardContent className="p-8">
-                  <h3 className="text-2xl font-bold text-orange-800 mb-6 flex items-center">
-                    <span className="text-3xl mr-4">⚠️</span>
+                <CardContent className="p-4 sm:p-8">
+                  <h3 className="text-xl sm:text-2xl font-bold text-orange-800 mb-4 sm:mb-6 flex items-center">
+                    <span className="text-2xl sm:text-3xl mr-3 sm:mr-4">
+                      ⚠️
+                    </span>
                     Poziția Noastră Fermă
                   </h3>
-                  <div className="text-gray-700 leading-relaxed space-y-4">
+                  <div className="text-sm sm:text-base text-gray-700 leading-relaxed space-y-3 sm:space-y-4">
                     <p>
                       <strong>Condamnăm ferm</strong> orice act de dezinformare,
                       propagandă sau manipulare a opiniei publice.
@@ -446,12 +452,14 @@ export default function HomePage() {
               </Card>
 
               <Card className="border-2 border-orange-200 transform hover:scale-105 transition-transform duration-300">
-                <CardContent className="p-8">
-                  <h3 className="text-2xl font-bold text-orange-800 mb-6 flex items-center">
-                    <span className="text-3xl mr-4">🔒</span>
+                <CardContent className="p-4 sm:p-8">
+                  <h3 className="text-xl sm:text-2xl font-bold text-orange-800 mb-4 sm:mb-6 flex items-center">
+                    <span className="text-2xl sm:text-3xl mr-3 sm:mr-4">
+                      🔒
+                    </span>
                     Confidențialitatea și Respectul
                   </h3>
-                  <div className="text-gray-700 leading-relaxed space-y-4">
+                  <div className="text-sm sm:text-base text-gray-700 leading-relaxed space-y-3 sm:space-y-4">
                     <p>
                       Respectăm pe deplin confidențialitatea și demnitatea
                       tuturor persoanelor care apelează la serviciile noastre.
@@ -467,11 +475,11 @@ export default function HomePage() {
 
             {/* Commitment Card */}
             <Card className="bg-orange-50 border-2 border-orange-300 transform hover:scale-105 transition-transform duration-300">
-              <CardContent className="p-8 text-center">
-                <h3 className="text-3xl font-bold text-orange-800 mb-4">
+              <CardContent className="p-4 sm:p-8 text-center">
+                <h3 className="text-2xl sm:text-3xl font-bold text-orange-800 mb-3 sm:mb-4">
                   Angajamentul Nostru
                 </h3>
-                <p className="text-xl text-gray-700 leading-relaxed">
+                <p className="text-base sm:text-xl text-gray-700 leading-relaxed">
                   Ne angajăm să rămânem fideli acestor principii și să oferim
                   sprijin autentic și dezinteresat tuturor românilor care au
                   nevoie de ajutor în diaspora europeană.
@@ -588,11 +596,11 @@ export default function HomePage() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/50 to-black/30"></div>
 
             {/* Text content positioned over the image */}
-            <div className="absolute inset-0 flex flex-col justify-center p-8 md:p-16 text-white animate-slide-up">
-              <h2 className="text-xl lg:text-5xl sm:text-4xl font-bold mb-6">
+            <div className="absolute inset-0 flex flex-col justify-center p-2 lg:p-8 md:p-16 text-white animate-slide-up">
+              <h2 className="text-lg lg:text-5xl  font-bold mb-6">
                 Din dragoste pentru ai noștri – România se leagă din nou
               </h2>
-              <p className="text-lg lg:text-2xl leading-relaxed mb-8 max-w-3xl">
+              <p className="text-md lg:text-2xl  max-w-3xl">
                 Nu politicienii vor uni România, ci oamenii simpli, care aleg să
                 facă bine fără să ceară nimic în schimb. Când diaspora se
                 întoarce cu inima spre cei rămași acasă, iar cei de acasă
