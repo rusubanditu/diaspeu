@@ -140,75 +140,6 @@ export default function EchipaPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-orange-200 via-orange-300 to-orange-200 opacity-50"></div>
       </div>
 
-      {/* Founders Section */}
-      <section className="py-16 px-4 bg-gradient-to-b from-orange-50/50 to-white">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-orange-800 mb-12 romanian-accent animate-fade-in">
-            Fondatori
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
-            {/* Left Founder */}
-            <div className="flex flex-col items-center animate-slide-up">
-              <div className="relative w-64 h-64 md:w-[22rem] md:h-[22rem] rounded-full overflow-hidden border-4 border-orange-300 shadow-xl mb-6">
-                <Image
-                  src="/dany-fondator.jpeg"
-                  alt="Dany"
-                  fill
-                  className="object-cover hover:scale-110 transition-transform duration-500"
-                  sizes="(max-width: 768px) 256px, 352px"
-                  priority
-                />
-              </div>
-              <h3 className="text-2xl font-bold text-orange-800 text-center">
-                Dany
-              </h3>
-            </div>
-
-            {/* Center Founders */}
-            <div
-              className="flex flex-col items-center animate-slide-up"
-              style={{ animationDelay: "0.2s" }}
-            >
-              <div className="relative w-64 h-64 md:w-[24rem] md:h-[24rem] rounded-full overflow-hidden border-4 border-orange-400 shadow-xl mb-6">
-                <Image
-                  src="/Ghita-Cristina-Ovidiu.jpeg"
-                  alt="Ghită, Cristina și Ovidiu"
-                  fill
-                  className="object-cover hover:scale-110 transition-transform duration-500"
-                  sizes="(max-width: 768px) 256px, 384px"
-                  priority
-                />
-              </div>
-              <div className="text-center">
-                <h3 className="text-2xl font-bold text-orange-800 whitespace-nowrap">
-                  Ghiță • Cristina • Ovidiu
-                </h3>
-              </div>
-            </div>
-
-            {/* Right Founder */}
-            <div
-              className="flex flex-col items-center animate-slide-up"
-              style={{ animationDelay: "0.4s" }}
-            >
-              <div className="relative w-64 h-64 md:w-[22rem] md:h-[22rem] rounded-full overflow-hidden border-4 border-orange-300 shadow-xl mb-6">
-                <Image
-                  src="/elena-fondator.jpeg"
-                  alt="Elena"
-                  fill
-                  className="object-cover hover:scale-110 transition-transform duration-500"
-                  sizes="(max-width: 768px) 256px, 352px"
-                  priority
-                />
-              </div>
-              <h3 className="text-2xl font-bold text-orange-800 text-center">
-                Elena
-              </h3>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Team Members Section */}
       <section className="py-16 px-4 bg-gradient-to-b from-orange-50/50 to-white">
         <div className="max-w-7xl mx-auto">
@@ -295,4 +226,74 @@ export default function EchipaPage() {
       </section>
     </div>
   );
+}
+
+{
+  /* Founders Section */
+}
+{
+  /* <section className="py-16 px-4 bg-gradient-to-b from-orange-50/50 to-white">
+  <div className="max-w-7xl mx-auto">
+    <h2 className="text-4xl font-bold text-center text-orange-800 mb-12 romanian-accent animate-fade-in">
+      Fondatori
+    </h2>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+      <div className="flex flex-col items-center animate-slide-up">
+        <div className="relative w-64 h-64 md:w-[22rem] md:h-[22rem] rounded-full overflow-hidden border-4 border-orange-300 shadow-xl mb-6">
+          <Image
+            src="/dany-fondator.jpeg"
+            alt="Dany"
+            fill
+            className="object-cover hover:scale-110 transition-transform duration-500"
+            sizes="(max-width: 768px) 256px, 352px"
+            priority
+          />
+        </div>
+        <h3 className="text-2xl font-bold text-orange-800 text-center">
+          Dany
+        </h3>
+      </div>
+
+      <div
+        className="flex flex-col items-center animate-slide-up"
+        style={{ animationDelay: "0.2s" }}
+      >
+        <div className="relative w-64 h-64 md:w-[24rem] md:h-[24rem] rounded-full overflow-hidden border-4 border-orange-400 shadow-xl mb-6">
+          <Image
+            src="/Ghita-Cristina-Ovidiu.jpeg"
+            alt="Ghită, Cristina și Ovidiu"
+            fill
+            className="object-cover hover:scale-110 transition-transform duration-500"
+            sizes="(max-width: 768px) 256px, 384px"
+            priority
+          />
+        </div>
+        <div className="text-center">
+          <h3 className="text-2xl font-bold text-orange-800 whitespace-nowrap">
+            Ghiță • Cristina • Ovidiu
+          </h3>
+        </div>
+      </div>
+
+      <div
+        className="flex flex-col items-center animate-slide-up"
+        style={{ animationDelay: "0.4s" }}
+      >
+        <div className="relative w-64 h-64 md:w-[22rem] md:h-[22rem] rounded-full overflow-hidden border-4 border-orange-300 shadow-xl mb-6">
+          <Image
+            src="/elena-fondator.jpeg"
+            alt="Elena"
+            fill
+            className="object-cover hover:scale-110 transition-transform duration-500"
+            sizes="(max-width: 768px) 256px, 352px"
+            priority
+          />
+        </div>
+        <h3 className="text-2xl font-bold text-orange-800 text-center">
+          Elena
+        </h3>
+      </div>
+    </div>
+  </div>
+</section> */
 }
