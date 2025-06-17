@@ -74,7 +74,7 @@ export default function PaginaSpecialaPage() {
       <section className="warm-gradient py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl font-bold text-red-800 mb-6">
-            Pagina Specială
+            Detalii despre serviciile noastre
           </h1>
           <p className="text-xl text-gray-700 leading-relaxed">
             Servicii dedicate comunității românești din diaspora

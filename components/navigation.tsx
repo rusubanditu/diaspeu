@@ -5,13 +5,21 @@ import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 
+// Updated menu items with nested structure for Services
 const menuItems = [
   { href: "/", label: "Acasă" },
   { href: "/echipa", label: "Echipa" },
   { href: "/proiecte", label: "Proiecte" },
-  { href: "/pagina-speciala", label: "Servicii" },
-  { href: "/locuri-de-munca", label: "Locuri de muncă" },
+  {
+    label: "Servicii",
+    children: [
+      { href: "/pagina-speciala", label: "Detalii" },
+      { href: "/locuri-de-munca", label: "Locuri de muncă" },
+      { href: "/promovari", label: "Promovări" },
+    ],
+  },
   { href: "/respect", label: "Respect" },
+  { href: "/comunicare-comunitate", label: "Comunicare" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -141,7 +149,7 @@ function AnimatedRomanianFlag() {
       <div
         className="absolute left-0 top-0 w-1 z-10"
         style={{
-          height: "60px", // Extended height to make it look like a proper flagpole
+          height: "60px",
           background:
             "linear-gradient(to right, #1a1a1a 0%, #333333 50%, #1a1a1a 100%)",
           boxShadow: "1px 0 2px rgba(0,0,0,0.3)",
@@ -194,6 +202,7 @@ export function Navigation() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -209,6 +218,11 @@ export function Navigation() {
 
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
+    setActiveDropdown(null);
+  };
+
+  const toggleDropdown = (label: string) => {
+    setActiveDropdown(activeDropdown === label ? null : label);
   };
 
   return (
@@ -233,7 +247,7 @@ export function Navigation() {
                 <AnimatedRomanianFlag />
               </div>
               <div className="animate-fade-in">
-                <h1 className="text-lg lg:text-2xl font-bold text-orange-700 group-hover:text-orange-600 transition-colors ">
+                <h1 className="text-lg lg:text-2xl font-bold text-orange-700 group-hover:text-orange-600 transition-colors">
                   Voluntar în Europa
                 </h1>
                 <p className="text-xl lg:text-3xl text-orange-600/80 lg:pl-28">
@@ -244,22 +258,67 @@ export function Navigation() {
 
             {/* Desktop Menu */}
             <div className="hidden md:flex space-x-2">
-              {menuItems.map((item, index) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={cn(
-                    "nav-link px-4 py-2 rounded-lg text-lg font-medium transition-all duration-300 button-hover",
-                    pathname === item.href
-                      ? "bg-orange-600 text-white shadow-md active"
-                      : "text-orange-700 hover:bg-orange-50 hover:text-orange-600",
-                    "animate-fade-in"
-                  )}
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  {item.label}
-                </Link>
-              ))}
+              {menuItems.map((item, index) =>
+                "children" in item ? (
+                  <div key={item.label} className="relative group">
+                    <button
+                      className={cn(
+                        "nav-link px-4 py-2 rounded-lg text-lg font-medium transition-all duration-300 button-hover",
+                        "text-orange-700 hover:bg-orange-50 hover:text-orange-600",
+                        "animate-fade-in flex items-center"
+                      )}
+                      style={{ animationDelay: `${index * 0.1}s` }}
+                    >
+                      {item.label}
+                      <svg
+                        className="w-4 h-4 ml-1"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </button>
+                    <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                      <div className="py-1">
+                        {item.children?.map((child) => (
+                          <Link
+                            key={child.href}
+                            href={child.href}
+                            className={cn(
+                              "block px-4 py-2 text-sm text-orange-700 hover:bg-orange-50 hover:text-orange-600",
+                              pathname === child.href &&
+                                "bg-orange-600 text-white"
+                            )}
+                          >
+                            {child.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className={cn(
+                      "nav-link px-4 py-2 rounded-lg text-lg font-medium transition-all duration-300 button-hover",
+                      pathname === item.href
+                        ? "bg-orange-600 text-white shadow-md active"
+                        : "text-orange-700 hover:bg-orange-50 hover:text-orange-600",
+                      "animate-fade-in"
+                    )}
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                  >
+                    {item.label}
+                  </Link>
+                )
+              )}
             </div>
 
             {/* Mobile Hamburger Button */}
@@ -290,29 +349,85 @@ export function Navigation() {
           className={cn(
             "md:hidden mobile-menu overflow-hidden transition-all duration-300",
             isMobileMenuOpen
-              ? "max-h-96 opacity-100 open"
+              ? "max-h-[500px] opacity-100 open"
               : "max-h-0 opacity-0 closed"
           )}
         >
           <div className="warm-gradient-subtle border-t border-orange-200">
             <div className="max-w-7xl mx-auto px-4 py-4 space-y-2">
-              {menuItems.map((item, index) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={closeMobileMenu}
-                  className={cn(
-                    "block px-4 py-3 rounded-lg text-lg font-medium transition-all duration-300 button-hover",
-                    pathname === item.href
-                      ? "bg-orange-600 text-white shadow-md"
-                      : "text-orange-700 hover:bg-orange-100 hover:text-orange-600",
-                    "animate-slide-up"
-                  )}
-                  style={{ animationDelay: `${index * 0.05}s` }}
-                >
-                  {item.label}
-                </Link>
-              ))}
+              {menuItems.map((item, index) =>
+                "children" in item ? (
+                  <div key={item.label}>
+                    <button
+                      onClick={() => toggleDropdown(item.label)}
+                      className={cn(
+                        "w-full text-left px-4 py-3 rounded-lg text-lg font-medium transition-all duration-300 button-hover flex justify-between items-center",
+                        "text-orange-700 hover:bg-orange-100 hover:text-orange-600",
+                        "animate-slide-up"
+                      )}
+                      style={{ animationDelay: `${index * 0.05}s` }}
+                    >
+                      {item.label}
+                      <svg
+                        className={cn(
+                          "w-4 h-4 transition-transform duration-200",
+                          activeDropdown === item.label ? "rotate-180" : ""
+                        )}
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </button>
+                    <div
+                      className={cn(
+                        "pl-4 space-y-2 transition-all duration-200",
+                        activeDropdown === item.label
+                          ? "max-h-48 opacity-100 mt-2"
+                          : "max-h-0 opacity-0 overflow-hidden"
+                      )}
+                    >
+                      {item.children?.map((child) => (
+                        <Link
+                          key={child.href}
+                          href={child.href}
+                          onClick={closeMobileMenu}
+                          className={cn(
+                            "block px-4 py-2 rounded-lg text-base font-medium transition-all duration-300",
+                            pathname === child.href
+                              ? "bg-orange-600 text-white shadow-md"
+                              : "text-orange-700 hover:bg-orange-100 hover:text-orange-600"
+                          )}
+                        >
+                          {child.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                ) : (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    onClick={closeMobileMenu}
+                    className={cn(
+                      "block px-4 py-3 rounded-lg text-lg font-medium transition-all duration-300 button-hover",
+                      pathname === item.href
+                        ? "bg-orange-600 text-white shadow-md"
+                        : "text-orange-700 hover:bg-orange-100 hover:text-orange-600",
+                      "animate-slide-up"
+                    )}
+                    style={{ animationDelay: `${index * 0.05}s` }}
+                  >
+                    {item.label}
+                  </Link>
+                )
+              )}
             </div>
           </div>
         </div>

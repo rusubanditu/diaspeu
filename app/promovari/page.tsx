@@ -60,11 +60,11 @@ function SanityAdsPage() {
         {/* Header */}
         <header className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Community Ads
+            PROMOVARI SERVICII SI CERERI AJUTOR PENTRU ROMANII DE PRETUTINDENI
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Discover local businesses to support and find ways to help community
-            members in need.
+            Cele mai relevante servicii si afaceri romanesti dar si urgente
+            pentru cazuri sociale vor fi postate aici
           </p>
         </header>
 
@@ -79,7 +79,7 @@ function SanityAdsPage() {
                   : "text-gray-700 hover:text-blue-600"
               }`}
             >
-              All ({ads.length})
+              Toate ({ads.length})
             </button>
             <button
               onClick={() => setFilter("business")}
@@ -89,7 +89,8 @@ function SanityAdsPage() {
                   : "text-gray-700 hover:text-blue-600"
               }`}
             >
-              Businesses ({ads.filter((ad) => ad.type === "business").length})
+              Afaceri & Servicii Romanesti (
+              {ads.filter((ad) => ad.type === "business").length})
             </button>
             <button
               onClick={() => setFilter("help")}
@@ -99,7 +100,7 @@ function SanityAdsPage() {
                   : "text-gray-700 hover:text-green-600"
               }`}
             >
-              Help Requests ({ads.filter((ad) => ad.type === "help").length})
+              Cereri Ajutor ({ads.filter((ad) => ad.type === "help").length})
             </button>
           </div>
         </div>
@@ -121,11 +122,11 @@ function SanityAdsPage() {
               />
             </svg>
             <h3 className="mt-2 text-sm font-medium text-gray-900">
-              No ads found
+              Nu sunt promovari gasite momentan
             </h3>
             <p className="mt-1 text-sm text-gray-500">
               {filter === "all"
-                ? "No ads have been posted yet."
+                ? "Verifica serverul nostru de discord pentru a fi la curent cu toate promovarile si cererile de ajutor!"
                 : `No ${
                     filter === "business" ? "business" : "help request"
                   } ads found.`}
