@@ -772,7 +772,7 @@ export default function HomePage() {
             >
               <Link href="https://discord.gg/qbadfZmKNA" target="_blank">
                 <span className="flex items-center gap-2">
-                  Apăsați Aici Pentru Ajutor
+                  Apasati aici pentru a va alatura
                   <svg
                     className="w-6 h-6 group-hover:animate-bounce"
                     viewBox="0 0 24 24"
@@ -783,6 +783,19 @@ export default function HomePage() {
                     />
                   </svg>
                 </span>
+              </Link>
+            </Button>
+          </div>
+          {/* Learn More Button */}
+          <div className="flex justify-center mt-6">
+            <Button
+              asChild
+              variant="secondary"
+              size="lg"
+              className="bg-orange-100 hover:bg-orange-200 text-orange-800 text-lg px-8 py-4 shadow-md transition-all duration-300"
+            >
+              <Link href="/comunicare-comunitate">
+                <span className="flex items-center gap-2">Află mai multe</span>
               </Link>
             </Button>
           </div>

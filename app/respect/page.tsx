@@ -22,7 +22,7 @@ export default function RespectPage() {
       name: "Familia Gagea ",
       country: "Spania",
       description:
-        "O familie de romani suverani care au luptat cu trup si suflet pentru o Romanie frumoasa. www.diasporaeu.de iti multumeste!",
+        "O familie de romani suverani care a luptat cu trup si suflet pentru o Romanie frumoasa. www.diasporaeu.de iti multumeste!",
       image: "/fam-gagea.jpeg",
       altText: "Maria Silva profile picture from Spain",
       // Using valid imagePosition value
