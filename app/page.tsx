@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Heart, Users, Globe, Shield } from "lucide-react";
 import HeroSection from "./Herosec";
+import PromoVariedSection from "@/components/Promovarired";
 
 const homeArticles = [
   {
@@ -462,7 +463,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
+      <PromoVariedSection />
       {/* Respect și Transparență Section */}
       <section className="py-12 sm:py-16 px-4 bg-white relative z-10">
         <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8">

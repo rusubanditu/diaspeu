@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useSearchParams } from "next/navigation";
 import { client, GROQ_QUERIES, urlFor, Ad, getTextPreview } from "@/lib/sanity";
 
 // Real Sanity data fetching
@@ -18,11 +19,28 @@ const getAllAds = async (): Promise<Ad[]> => {
 };
 
 function SanityAdsPage() {
+  const searchParams = useSearchParams();
   const [ads, setAds] = React.useState<Ad[]>([]);
   const [loading, setLoading] = React.useState(true);
+
+  // Get filter from URL parameters, default to "all"
+  const getInitialFilter = (): "all" | "business" | "help" => {
+    const filterParam = searchParams.get("filter");
+    if (filterParam === "business" || filterParam === "help") {
+      return filterParam;
+    }
+    return "all";
+  };
+
   const [filter, setFilter] = React.useState<"all" | "business" | "help">(
-    "all"
+    getInitialFilter()
   );
+
+  // Update filter when URL parameters change
+  React.useEffect(() => {
+    const newFilter = getInitialFilter();
+    setFilter(newFilter);
+  }, [searchParams]);
 
   React.useEffect(() => {
     const fetchAds = async () => {
