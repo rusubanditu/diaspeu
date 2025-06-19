@@ -242,7 +242,7 @@ export default function ProiectePage() {
 
       {/* Digital Marketing Consulting Section */}
       <motion.section
-        className="py-20 px-4 bg-gradient-to-br from-indigo-600 via-purple-700 to-pink-600 relative overflow-hidden"
+        className="py-20 px-4 bg-gradient-to-br from-orange-800 to-orange-900 relative overflow-hidden"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
@@ -308,7 +308,7 @@ export default function ProiectePage() {
               <span className="text-5xl sm:text-6xl">💻</span> Consultanță
               Gratuită
               <br />
-              <span className="text-yellow-300 text-shimmer">
+              <span className="text-orange-300 text-shimmer">
                 Marketing Digital
               </span>
             </motion.h2>
@@ -320,151 +320,10 @@ export default function ProiectePage() {
             >
               <span className="text-2xl">🎯</span> Te ajut să înțelegi totul
               despre promovarea online -{" "}
-              <strong className="text-yellow-300">GRATUIT!</strong>
+              <strong className="text-orange-300">GRATUIT!</strong>
               <br />
-              <span className="text-lg text-white/80">
-                Perfect pentru persoane 40+ care vor să își dezvolte afacerea
-                online
-              </span>
             </motion.p>
           </motion.div>
-
-          {/* Trust Building Section */}
-          <motion.div
-            className="text-center mb-16 bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20"
-            initial={{ scale: 0.8, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            <div className="flex justify-center items-center gap-8 flex-wrap">
-              <motion.div
-                className="text-center"
-                whileHover={{ scale: 1.1 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <div className="text-4xl mb-2">🏆</div>
-                <p className="text-white font-semibold">10+ Ani Experiență</p>
-              </motion.div>
-              <motion.div
-                className="text-center"
-                whileHover={{ scale: 1.1 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <div className="text-4xl mb-2">🇷🇴</div>
-                <p className="text-white font-semibold">Vorbesc Româna</p>
-              </motion.div>
-              <motion.div
-                className="text-center"
-                whileHover={{ scale: 1.1 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <div className="text-4xl mb-2">❤️</div>
-                <p className="text-white font-semibold">Înțeleg Nevoile Tale</p>
-              </motion.div>
-              <motion.div
-                className="text-center"
-                whileHover={{ scale: 1.1 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <div className="text-4xl mb-2">💯</div>
-                <p className="text-white font-semibold">100% Gratuit</p>
-              </motion.div>
-            </div>
-          </motion.div>
-
-          {/* Services Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 mb-16">
-            {[
-              {
-                icon: "📘",
-                title: "Facebook & Instagram",
-                desc: "Promovare pe Meta",
-                color: "from-blue-500 to-purple-600",
-              },
-              {
-                icon: "🔍",
-                title: "Google Ads",
-                desc: "Publicitate pe Google",
-                color: "from-green-500 to-blue-600",
-              },
-              {
-                icon: "🎵",
-                title: "TikTok Ads",
-                desc: "Marketing pe TikTok",
-                color: "from-pink-500 to-red-600",
-              },
-              {
-                icon: "🎨",
-                title: "Identitate de Brand",
-                desc: "Logo și branding",
-                color: "from-purple-500 to-pink-600",
-              },
-              {
-                icon: "📱",
-                title: "Social Media",
-                desc: "Gestionare rețele",
-                color: "from-indigo-500 to-purple-600",
-              },
-              {
-                icon: "💻",
-                title: "Site-uri Web",
-                desc: "Dezvoltare profesională",
-                color: "from-cyan-500 to-blue-600",
-              },
-              {
-                icon: "🤖",
-                title: "Inteligență Artificială",
-                desc: "Automatizări AI",
-                color: "from-orange-500 to-red-600",
-              },
-              {
-                icon: "🛒",
-                title: "Magazine Online",
-                desc: "E-commerce complet",
-                color: "from-emerald-500 to-green-600",
-              },
-            ].map((service, index) => (
-              <motion.div
-                key={service.title}
-                className={`bg-gradient-to-br ${service.color} backdrop-blur-sm rounded-2xl p-4 sm:p-6 text-center border border-white/20 shadow-lg`}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                whileHover={{
-                  scale: 1.05,
-                  rotate: 2,
-                  transition: { type: "spring", stiffness: 300 },
-                }}
-                transition={{
-                  duration: 0.6,
-                  delay: index * 0.1,
-                  type: "spring",
-                  stiffness: 100,
-                }}
-                viewport={{ once: true }}
-              >
-                <motion.div
-                  className="text-3xl sm:text-4xl mb-3"
-                  animate={{
-                    rotate: [0, 10, -10, 0],
-                    scale: [1, 1.1, 1],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    delay: index * 0.2,
-                  }}
-                >
-                  {service.icon}
-                </motion.div>
-                <h3 className="text-white font-bold text-sm sm:text-lg mb-2">
-                  {service.title}
-                </h3>
-                <p className="text-white/90 text-xs sm:text-sm">
-                  {service.desc}
-                </p>
-              </motion.div>
-            ))}
-          </div>
 
           {/* Main Value Proposition */}
           <motion.div
@@ -492,49 +351,6 @@ export default function ProiectePage() {
             >
               🎓 Îți Explic Totul - Simplu și Clar!
             </motion.h3>
-            <div className="grid md:grid-cols-2 gap-6 sm:gap-8 text-left mb-8">
-              {[
-                {
-                  icon: "💰",
-                  title: "Costurile Reale",
-                  desc: "Îți explic exact cât te costă fiecare serviciu și de ce - fără surprize!",
-                },
-                {
-                  icon: "⏰",
-                  title: "Timpul Necesar",
-                  desc: "Cât durează să vezi rezultate și cum să fii răbdător cu procesul",
-                },
-                {
-                  icon: "🚀",
-                  title: "Cele Mai Bune Tehnologii",
-                  desc: "Ce platforme să folosești și care sunt cele mai eficiente pentru tine",
-                },
-                {
-                  icon: "🎯",
-                  title: "Strategii Personalizate",
-                  desc: "Îți fac un plan specific pentru business-ul tău, pas cu pas",
-                },
-              ].map((item, index) => (
-                <motion.div
-                  key={item.title}
-                  className="flex items-start gap-3"
-                  initial={{ x: index % 2 === 0 ? -30 : 30, opacity: 0 }}
-                  whileInView={{ x: 0, opacity: 1 }}
-                  transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
-                  whileHover={{ scale: 1.02 }}
-                >
-                  <span className="text-2xl flex-shrink-0">{item.icon}</span>
-                  <div>
-                    <h4 className="text-lg sm:text-xl font-bold text-yellow-300 mb-2">
-                      {item.title}
-                    </h4>
-                    <p className="text-white/90 text-sm sm:text-base">
-                      {item.desc}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
 
             {/* WhatsApp CTA */}
             <motion.div
@@ -543,37 +359,22 @@ export default function ProiectePage() {
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              <motion.p
-                className="text-xl sm:text-2xl text-white mb-6 font-medium"
-                animate={{
-                  textShadow: [
-                    "0 0 10px rgba(255,255,255,0.3)",
-                    "0 0 20px rgba(255,255,255,0.6)",
-                    "0 0 10px rgba(255,255,255,0.3)",
-                  ],
-                }}
-                transition={{ duration: 2, repeat: Infinity }}
-              >
-                🤝 <strong>Totul este GRATUIT!</strong> Vreau să te ajut să
-                reușești!
-              </motion.p>
-
               <motion.a
                 href="https://wa.me/4915255474082?text=Salut! Sunt interesat/ă de consultanța gratuită pentru marketing digital. Mulțumesc!"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 sm:gap-4 bg-green-500 hover:bg-green-600 text-white font-bold text-lg sm:text-xl px-6 sm:px-8 py-3 sm:py-4 rounded-full shadow-2xl border-2 border-green-400"
+                className="inline-flex items-center gap-3 sm:gap-4 bg-orange-600 hover:bg-orange-700 text-white font-bold text-lg sm:text-xl px-6 sm:px-8 py-3 sm:py-4 rounded-full shadow-2xl border-2 border-orange-500"
                 whileHover={{
                   scale: 1.05,
-                  boxShadow: "0 0 30px rgba(34, 197, 94, 0.6)",
+                  boxShadow: "0 0 30px rgba(234, 88, 12, 0.6)",
                 }}
                 whileTap={{ scale: 0.98 }}
                 animate={{
                   y: [0, -5, 0],
                   boxShadow: [
-                    "0 10px 30px rgba(34, 197, 94, 0.3)",
-                    "0 15px 40px rgba(34, 197, 94, 0.5)",
-                    "0 10px 30px rgba(34, 197, 94, 0.3)",
+                    "0 10px 30px rgba(234, 88, 12, 0.3)",
+                    "0 15px 40px rgba(234, 88, 12, 0.5)",
+                    "0 10px 30px rgba(234, 88, 12, 0.3)",
                   ],
                 }}
                 transition={{
@@ -610,18 +411,6 @@ export default function ProiectePage() {
               >
                 📞 +49 1525 5474082
               </motion.p>
-
-              <motion.div
-                className="mt-6 text-white/70 text-sm space-y-1"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.6, delay: 1 }}
-              >
-                <p>✅ Răspund rapid (în câteva ore)</p>
-                <p>✅ Consultanță 100% în română</p>
-                <p>✅ Fără costuri ascunse - totul gratuit</p>
-                <p>✅ Înțeleg nevoile românilor 40+</p>
-              </motion.div>
             </motion.div>
           </motion.div>
         </div>
