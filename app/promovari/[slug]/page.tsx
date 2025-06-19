@@ -93,19 +93,19 @@ const AdPage: React.FC<AdPageProps> = ({ params }) => {
         <header className="mb-8">
           <div className="flex flex-col lg:flex-row gap-8">
             {/* Image */}
-            <div className="lg:w-1/2">
+            <div className="lg:w-full">
               {ad.image ? (
-                <div className="relative aspect-square w-full rounded-lg overflow-hidden shadow-lg">
+                <div className="relative aspect-[4/3] w-full rounded-lg overflow-hidden shadow-lg">
                   <Image
-                    src={urlFor(ad.image).width(600).height(600).url()}
+                    src={urlFor(ad.image).width(800).height(600).url()}
                     alt={ad.image.alt || ad.title}
                     fill
-                    className="object-cover"
+                    className="object-contain"
                     priority
                   />
                 </div>
               ) : (
-                <div className="aspect-square w-full bg-gray-200 rounded-lg flex items-center justify-center">
+                <div className="aspect-[4/3] w-full bg-gray-200 rounded-lg flex items-center justify-center">
                   <span className="text-gray-500">No image available</span>
                 </div>
               )}
@@ -187,7 +187,7 @@ const AdPage: React.FC<AdPageProps> = ({ params }) => {
         {/* Contact Information */}
         <section className="mb-8">
           <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-            Contact Information
+            Informatii de contact
           </h2>
           <div className="bg-white rounded-lg shadow-md p-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -208,7 +208,9 @@ const AdPage: React.FC<AdPageProps> = ({ params }) => {
                     />
                   </svg>
                   <div>
-                    <p className="font-medium text-gray-900">Phone</p>
+                    <p className="font-medium text-gray-900">
+                      Numar de telefon
+                    </p>
                     <a
                       href={`tel:${ad.phone}`}
                       className="text-blue-600 hover:text-blue-800"
@@ -282,20 +284,25 @@ const AdPage: React.FC<AdPageProps> = ({ params }) => {
           {ad.type === "business" ? (
             <div className="bg-blue-50 rounded-lg p-6">
               <h3 className="text-lg font-semibold text-blue-900 mb-2">
-                Visit This Business
+                Promovăm doar afaceri românești, create de frații și surorile
+                noastre!
               </h3>
               <p className="text-blue-700">
-                Support our community sponsors by visiting them at their
-                location.
+                Tot ce vezi aici este 100% autohton – susținem comunitatea
+                noastră, fără compromisuri. Dacă și tu ai o afacere românească
+                și vrei să o promovăm, alătură-te pe Discord: 👉
+                https://discord.gg/qbadfZmKNA Contactează un membru din echipă
+                și hai să creștem împreună!
               </p>
             </div>
           ) : (
             <div className="bg-green-50 rounded-lg p-6">
               <h3 className="text-lg font-semibold text-green-900 mb-2">
-                How You Can Help
+                Cum poti ajuta
               </h3>
               <p className="text-green-700">
-                Your donation can make a real difference in someone&apos;s life.
+                Ajutorul tau poate face o reală diferență în viața unei
+                persoane.
               </p>
             </div>
           )}
