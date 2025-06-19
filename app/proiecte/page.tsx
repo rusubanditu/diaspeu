@@ -402,15 +402,6 @@ export default function ProiectePage() {
                   💬
                 </motion.span>
               </motion.a>
-
-              <motion.p
-                className="text-white/80 mt-4 text-lg"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.8 }}
-              >
-                📞 +49 1525 5474082
-              </motion.p>
             </motion.div>
           </motion.div>
         </div>
