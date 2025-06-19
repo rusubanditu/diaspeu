@@ -121,7 +121,9 @@ const AdPage: React.FC<AdPageProps> = ({ params }) => {
                       : "bg-green-100 text-green-800"
                   }`}
                 >
-                  {ad.type === "business" ? "Business Sponsor" : "Help Request"}
+                  {ad.type === "business"
+                    ? "Afacere 100% romaneasca"
+                    : "Ajutor"}
                 </span>
               </div>
 
@@ -176,9 +178,7 @@ const AdPage: React.FC<AdPageProps> = ({ params }) => {
 
         {/* Description */}
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-            Description
-          </h2>
+          <h2 className="text-2xl font-semibold text-gray-900 mb-4">Detalii</h2>
           <div className="prose prose-lg max-w-none">
             <PortableText content={ad.description} />
           </div>

@@ -217,7 +217,7 @@ function SanityAdsPage() {
                     </p>
 
                     <div className="mt-4 flex items-center text-sm font-medium text-blue-600 group-hover:text-blue-800">
-                      Learn more
+                      Citeste mai mult
                       <svg
                         className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform"
                         fill="none"
