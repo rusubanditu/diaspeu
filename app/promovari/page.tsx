@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { Suspense } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
@@ -13,17 +13,28 @@ const getAllAds = async (): Promise<Ad[]> => {
     return ads;
   } catch (error) {
     console.error("Error fetching ads from Sanity:", error);
-    // Return empty array instead of mock data
     return [];
   }
 };
 
-function SanityAdsPage() {
+// Loading component for Suspense fallback
+function LoadingSpinner() {
+  return (
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="text-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+        <p className="text-gray-600">Loading ads...</p>
+      </div>
+    </div>
+  );
+}
+
+// Main content component wrapped in Suspense
+function MainContent() {
   const searchParams = useSearchParams();
   const [ads, setAds] = React.useState<Ad[]>([]);
   const [loading, setLoading] = React.useState(true);
 
-  // Get filter from URL parameters, default to "all"
   const getInitialFilter = (): "all" | "business" | "help" => {
     const filterParam = searchParams.get("filter");
     if (filterParam === "business" || filterParam === "help") {
@@ -36,7 +47,6 @@ function SanityAdsPage() {
     getInitialFilter()
   );
 
-  // Update filter when URL parameters change
   React.useEffect(() => {
     const newFilter = getInitialFilter();
     setFilter(newFilter);
@@ -62,14 +72,7 @@ function SanityAdsPage() {
   );
 
   if (loading) {
-    return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
-          <p className="text-gray-600">Loading ads...</p>
-        </div>
-      </div>
-    );
+    return <LoadingSpinner />;
   }
 
   return (
@@ -167,7 +170,7 @@ function SanityAdsPage() {
                         alt={ad.image.alt || ad.title}
                         fill
                         className="object-cover object-top group-hover:scale-105 transition-transform duration-300"
-                        style={{ objectPosition: "50% 1%" }} // Position image higher to show faces better
+                        style={{ objectPosition: "50% 1%" }}
                       />
                     ) : (
                       <div className="h-full flex items-center justify-center">
@@ -258,6 +261,15 @@ function SanityAdsPage() {
         )}
       </div>
     </div>
+  );
+}
+
+// Main component with Suspense boundary
+function SanityAdsPage() {
+  return (
+    <Suspense fallback={<LoadingSpinner />}>
+      <MainContent />
+    </Suspense>
   );
 }
 
