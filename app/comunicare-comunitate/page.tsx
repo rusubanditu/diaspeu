@@ -18,11 +18,14 @@ import {
   Play,
   Coffee,
   Heart,
+  Shield,
+  Lock,
+  CheckSquare,
 } from "lucide-react";
 import { motion } from "framer-motion";
 
 /**
- * Discord Tutorial Page for 45+ Romanian Users
+ * Discord Tutorial Page for Romanian Users
  * Easy-to-follow instructions with device selection and micro-animations
  * Based on latest Discord download information from discord.com
  */
@@ -173,24 +176,79 @@ export default function ComunicareComunitate() {
   const instructions = getInstructions();
 
   return (
-    <div className="min-h-screen  bg-gradient-to-br from-blue-50 via-white to-purple-50">
-      {/* Header Section */}
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+      {/* Header Section with Safety Message */}
       <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 py-16">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <h1 className="text-5xl font-bold text-white mb-6 drop-shadow-lg">
             Comunicare în Comunitate
           </h1>
           <p className="text-xl text-white/90 leading-relaxed max-w-3xl mx-auto mb-8">
-            Învățați să folosiți Discord - o platformă simplă pentru a vorbi cu
-            românii din diaspora. Este ca IRC-ul din anii 2000, dar mult mai
-            ușor de folosit!
+            Discord este o aplicație GRATUITĂ și SIGURĂ pentru a vorbi cu
+            românii din diaspora, exact ca WhatsApp, Facebook Messenger sau
+            TikTok. Nu veți plăti niciodată nimic și nu vi se vor cere date
+            bancare - versiunea gratuită are tot ce aveți nevoie pentru a
+            comunica cu familia și prietenii.
           </p>
-          <div className="flex items-center justify-center space-x-2 text-white/80">
-            <Coffee className="w-5 h-5" />
-            <span>Urmează instrucțiunile pas cu pas - este foarte simplu!</span>
+
+          {/* Safety Badges */}
+          <div className="flex flex-wrap justify-center gap-4 mb-6">
+            <Badge className="bg-green-500 text-white px-4 py-2 flex items-center gap-2">
+              <Shield className="w-4 h-4" />
+              100% Gratuit
+            </Badge>
+            <Badge className="bg-blue-500 text-white px-4 py-2 flex items-center gap-2">
+              <Lock className="w-4 h-4" />
+              Verificat de Google & Apple
+            </Badge>
+            <Badge className="bg-purple-500 text-white px-4 py-2 flex items-center gap-2">
+              <CheckSquare className="w-4 h-4" />
+              Fără date bancare
+            </Badge>
           </div>
 
-          {/* Quick join button for those familiar with Discord */}
+          {/* Security Notice */}
+          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 max-w-3xl mx-auto mb-8">
+            <h2 className="text-white font-semibold mb-2">
+              De ce puteți avea încredere deplină:
+            </h2>
+            <ul className="text-white/90 text-left space-y-2">
+              <li className="flex items-center gap-2">
+                <CheckCircle className="w-5 h-5 text-green-400" />
+                La fel ca TikTok, Facebook sau YouTube, Discord are opțiuni
+                premium OPȚIONALE - versiunea gratuită este tot ce aveți nevoie
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle className="w-5 h-5 text-green-400" />
+                Aplicația este verificată și aprobată de Google Play Store și
+                Apple App Store - la fel ca WhatsApp sau Messenger
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle className="w-5 h-5 text-green-400" />
+                Nu vi se vor cere NICIODATĂ informații bancare, carduri sau date
+                personale sensibile
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle className="w-5 h-5 text-green-400" />
+                Peste 150 milioane de persoane folosesc Discord zilnic în
+                siguranță pentru a vorbi cu familia și prietenii
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle className="w-5 h-5 text-green-400" />
+                Este folosit de milioane de români din diaspora pentru a păstra
+                legătura cu cei dragi
+              </li>
+            </ul>
+          </div>
+
+          <div className="flex items-center justify-center space-x-2 text-white/80">
+            <Coffee className="w-5 h-5" />
+            <span>
+              Urmați pașii simpli de mai jos pentru a începe - durează doar 2
+              minute
+            </span>
+          </div>
+
           <motion.div
             className="mt-6 flex justify-center"
             initial={{ opacity: 0, y: 20 }}
@@ -205,7 +263,7 @@ export default function ComunicareComunitate() {
               }
             >
               <ArrowRight className="w-5 h-5 mr-2" />
-              Alăturați-vă Acum
+              Alăturați-vă Comunității Acum
             </Button>
           </motion.div>
         </div>
@@ -224,14 +282,14 @@ export default function ComunicareComunitate() {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
                 <p className="text-lg leading-relaxed mb-6">
-                  <strong>Discord este ca un club virtual</strong> unde românii
-                  din toată lumea se pot întâlni și vorbi. Imaginați-vă
-                  cafeneaua din cartier, dar pe internet!
+                  <strong>Discord este ca o cafenea virtuală</strong> unde
+                  românii din toată lumea se pot întâlni și vorbi. Este complet
+                  gratuit și sigur - la fel cum folosiți WhatsApp sau Skype.
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3">
                     <Users className="w-6 h-6 text-green-500" />
-                    <span>Conversații în grup cu sute de români</span>
+                    <span>Conversații în grup cu alți români</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <MessageCircle className="w-6 h-6 text-blue-500" />
@@ -247,7 +305,7 @@ export default function ComunicareComunitate() {
                 <div className="bg-gradient-to-br from-blue-100 to-purple-100 rounded-lg p-6">
                   <Heart className="w-16 h-16 text-red-500 mx-auto mb-4 animate-pulse" />
                   <p className="text-lg font-semibold text-gray-700">
-                    Comunitatea românilor din diaspora vă așteaptă!
+                    Comunitatea românilor vă așteaptă cu drag!
                   </p>
                 </div>
               </div>
@@ -363,7 +421,6 @@ export default function ComunicareComunitate() {
               ))}
             </div>
 
-            {/* Download button placed directly under title */}
             <motion.div
               className="mt-4 flex justify-center"
               initial={{ opacity: 0, y: -10 }}
@@ -440,7 +497,6 @@ export default function ComunicareComunitate() {
               </div>
             </div>
 
-            {/* Join button directly under title */}
             <motion.div
               className="mt-4 flex justify-center"
               initial={{ opacity: 0, y: -10 }}
@@ -519,13 +575,14 @@ export default function ComunicareComunitate() {
 
             <div className="mt-8 p-6 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg border-l-4 border-yellow-400">
               <h4 className="font-semibold text-lg mb-2">
-                💡 Important de reținut:
+                💡 Garanția noastră de siguranță:
               </h4>
               <p className="text-gray-700">
-                Discord este <strong>GRATUIT</strong> și <strong>SIGUR</strong>{" "}
-                de folosit. Nu vă cerem niciodată date bancare sau informații
-                personale sensibile. Comportați-vă politicos și respectați
-                celelalte persoane din comunitate.
+                Discord este verificat și aprobat de Google și Apple. Nu vi se
+                vor cere NICIODATĂ date bancare sau informații personale
+                sensibile. Este la fel de sigur ca WhatsApp sau Facebook
+                Messenger. Milioane de persoane îl folosesc zilnic pentru a
+                comunica cu familia și prietenii.
               </p>
             </div>
           </CardContent>

@@ -14,7 +14,7 @@ export default function RespectPage() {
       country: "Germania",
       description:
         "Membru al partidului suveran AUR. Un om cu suflet de patriot. Romanii din Germania iti multumesc!",
-      image: "/iulian-raul.jpeg", //
+      image: "/iulian-raul.jpeg",
       altText: "John Doe profile picture from Germany",
     },
     {
@@ -25,10 +25,83 @@ export default function RespectPage() {
         "O familie de romani suverani care a luptat cu trup si suflet pentru o Romanie frumoasa. www.diasporaeu.de iti multumeste!",
       image: "/fam-gagea.jpeg",
       altText: "Maria Silva profile picture from Spain",
-      // Using valid imagePosition value
       imagePosition: "center",
     },
-
+    {
+      id: 4,
+      name: "Alexandra",
+      country: "Germania",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      image: "/alexandra-gr.jpeg",
+      altText: "Alexandra from Germany profile picture",
+      imagePosition: "center top", // Added imagePosition to move image down and show full head
+    },
+    {
+      id: 5,
+      name: "Alexandra",
+      country: "Romania",
+      description: "TikTok Influencer",
+      image: "/alexandra-ro.jpeg",
+      altText: "Alexandra from Romania profile picture",
+    },
+    {
+      id: 6,
+      name: "Bobby D",
+      country: "Jurnalist Independent",
+      description:
+        "Salutare om bun, strajer al Romaniei suverane. Iti multumim.",
+      image: "/bobby-d.jpeg",
+      altText: "Bobby D profile picture",
+    },
+    {
+      id: 7,
+      name: "Dogar Daniel Alexandru",
+      country: "Suedia",
+      description: "TikTok Influencer",
+      image: "/daniel-suedia.jpeg",
+      altText: "Daniel from Sweden profile picture",
+    },
+    {
+      id: 8,
+      name: "Flavia",
+      country: "Germania",
+      description: "TikTok Influencer",
+      image: "/flavia-gr.jpeg",
+      altText: "Flavia from Germany profile picture",
+    },
+    {
+      id: 9,
+      name: "Flavius",
+      country: "Germania",
+      description: "TikTok Influencer",
+      image: "/flavius-gr.jpeg",
+      altText: "Flavius from Germany profile picture",
+    },
+    {
+      id: 10,
+      name: "Georgiana",
+      country: "UK",
+      description: "TikTok Influencer",
+      image: "/georgiana-uk.jpeg",
+      altText: "Georgiana from UK profile picture",
+    },
+    {
+      id: 11,
+      name: "Marius",
+      country: "Italia",
+      description: "TikTok Influencer",
+      image: "/marius-it.jpeg",
+      altText: "Marius from Italy profile picture",
+    },
+    {
+      id: 12,
+      name: "Vasile",
+      country: "UK",
+      description: " ",
+      image: "/vasile-uk.jpeg",
+      altText: "Vasile from UK profile picture",
+    },
     {
       id: 3,
       name: "Ana G. - Calin G - George S",
@@ -38,16 +111,6 @@ export default function RespectPage() {
       image: "gc-gs.jpeg",
       altText: "John Doe profile picture from Germany",
     },
-    // Adauga ca in exemplu de mai jos pentru noi persoane
-    //
-    // {
-    //   id: 6,
-    //   name: "New Person",
-    //   country: "New Country",
-    //   description: "New description here...",
-    //   image: "/path-to-new-image.jpg",
-    //   altText: "New person profile picture"
-    // }
   ];
 
   return (

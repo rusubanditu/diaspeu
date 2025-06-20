@@ -687,9 +687,28 @@ export default function HomePage() {
 
           {/* Visual guide for Discord installation */}
           <div className="max-w-2xl mx-auto mb-12 p-6 bg-white/90 rounded-xl shadow-lg">
-            <h3 className="text-2xl font-semibold text-orange-700 mb-6">
+            <h3 className="text-2xl font-semibold text-orange-700 mb-2">
               Cum să intrați în grupul nostru de ajutor:
             </h3>
+            <p className="text-gray-600 mb-6">
+              Urmați acești pași simpli pentru a vă alătura comunității noastre
+              de suport și întrajutorare
+            </p>
+
+            {/* Info banner about Discord safety */}
+            <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-8 rounded-r">
+              <h4 className="font-semibold text-blue-800 mb-2">
+                Ce este Discord și de ce este sigur?
+              </h4>
+              <p className="text-sm text-blue-700">
+                Discord este o aplicație gratuită de comunicare, la fel ca
+                WhatsApp sau Facebook Messenger. Este verificată și aprobată de
+                Google și Apple, folosită de peste 150 milioane de persoane
+                zilnic. Nu necesită date bancare sau informații personale
+                sensibile.
+              </p>
+            </div>
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
               <div className="flex flex-col items-center group">
                 <div className="w-20 h-20 mb-4 transform group-hover:scale-110 transition-transform duration-300">
