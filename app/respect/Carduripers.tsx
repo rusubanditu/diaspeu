@@ -121,10 +121,6 @@ function SmartImage({
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         priority={priority}
         onLoad={handleImageLoad}
-        style={{
-          // Smart positioning based on image aspect ratio for optimal face/content visibility
-          objectPosition: objectPosition,
-        }}
       />
 
       {/* Image info overlay (only visible on hover for debugging) */}
