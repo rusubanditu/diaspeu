@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import HeroSection from "./Herosec";
 import PromoVariedSection from "@/components/Promovarired";
+import Popupx from "@/components/Popupx";
 
 const homeArticles = [
   {
@@ -303,6 +304,8 @@ export default function HomePage() {
     <div className="min-h-screen">
       {/* Background Music Component - Romanian National Anthem */}
       <BackgroundMusic />
+      {/* Social CTA Pop-up */}
+      <Popupx />
       <HeroSection />
       {/* Powerful Statement Section */}
       <section className="py-16 px-4 bg-gradient-to-br from-orange-800 to-orange-900 relative overflow-hidden">
@@ -1033,11 +1036,7 @@ export default function HomePage() {
             className="text-lg px-8 py-4 button-hover bg-white text-orange-700 hover:bg-orange-50 shadow-lg animate-scale-in"
           >
             <Link
-              href={
-                typeof window !== "undefined" && window.innerWidth < 768
-                  ? "whatsapp://send?phone=491754606617"
-                  : "https://wa.me/491754606617"
-              }
+              href="https://wa.me/491754606617"
               target="_blank"
               rel="noopener noreferrer"
             >
